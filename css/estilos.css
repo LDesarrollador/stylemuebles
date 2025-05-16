@@ -247,12 +247,18 @@ body {
 /* ========================= */
 /* ------------------------- */
 /* Ajustes para pantallas pequeñas (móviles) */
+/* Movil pequeño */
 @media (max-width: 600px) {
-  .logo-img {
-    width: 80px;
+  body {
+    margin-top: 60px;
   }
   
+  .logo-img {
+    width: 70px;
+  }
+
   .navbar {
+    top: 60px;
     padding: 10px;
     justify-content: center;
   }
@@ -263,48 +269,53 @@ body {
   }
 
   .slider {
-    height: 40vh;
+    height: 35vh;
+    position: relative;
   }
 
   .slider-button-float {
-    bottom: 60px;
+    bottom: 50px;
     left: 80%;
     padding: 8px 15px;
     font-size: 14px;
   }
-}
 
-/* Tablets */
-@media (min-width: 601px) and (max-width: 900px) {
-  .logo-img {
-    width: 100px;
+  .slider-button {
+    font-size: 20px;
+    padding: 8px;
   }
 
-  .slider {
-    height: 50vh;
+  .slider-indicators {
+
+  bottom: 38rem; /* o 1rem */
+
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 900px) {
+  .logo-img {
+    width: 90px;
+  }
+
+  .navbar {
+    top: 70px;
+    padding: 12px;
   }
 
   .navbar a {
     margin-right: 15px;
     font-size: 16px;
   }
-}
-/* para  las imagenes de proyectos en vertical */
-@media (max-width: 600px) {
-  .projects {
-    flex-direction: column;
-    align-items: center;
+
+  .slider {
+    height: 50vh;
   }
 
-  .project-card {
-    width: 90%; /* O 100% si quieres que ocupen todo el ancho disponible */
-    margin-bottom: 20px;
-  }
-
-  .project-card img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
+  .slider-button-float {
+    bottom: 70px;
+    left: 85%;
+    padding: 10px 20px;
+    font-size: 16px;
   }
 }
