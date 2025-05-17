@@ -109,7 +109,7 @@ body {
 /* Cada imagen ocupa el 100% del ancho visible */
 .slider-container img {
   flex: 0 0 100vw;
-  height: 100%;
+  height: 90%;
   object-fit: cover; /* Ajusta bien la imagen recortando si es necesario */
 }
 
@@ -179,18 +179,21 @@ body {
    Indicadores
 ================================ */
 .slider-indicators {
-  text-align: center;
   position: absolute;
-  bottom: 28%;
-  width: 100%;
+  bottom: 1rem; /* más coherente con rems */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-wrap: wrap; /* ✅ Permite salto de línea si hay muchos */
+  justify-content: center;
+  gap: 0.5rem;
   z-index: 10;
+  padding: 0 1rem; /* opcional: evitar desbordes */
 }
 
 .slider-indicators span {
-  display: inline-block;
   width: 12px;
   height: 12px;
-  margin: 0 5px;
   background-color: rgba(82, 79, 79, 0.6);
   border-radius: 50%;
   cursor: pointer;
@@ -248,74 +251,261 @@ body {
 /* ------------------------- */
 /* Ajustes para pantallas pequeñas (móviles) */
 /* Movil pequeño */
-@media (max-width: 600px) {
-  body {
-    margin-top: 60px;
-  }
-  
+/* ====================================
+   Media Queries Personalizados por Resolución
+==================================== */
+
+/* Galaxy S10+, A41+, A22+, A33+ (412 x 869) */
+@media (max-width: 412px) {
   .logo-img {
     width: 70px;
   }
 
-  .navbar {
-    top: 60px;
-    padding: 10px;
-    justify-content: center;
+  .slider {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Altura del slider en vista del navegador */
+  overflow: hidden;
+}
+   .slider-container img {
+  flex: 0 0 100vw;
+  height: 80%;
+  object-fit: cover; /* Ajusta bien la imagen recortando si es necesario */
+}
+slider-button {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  /* Transición para que el efecto sea suave */
+  transition: outline 0.3s ease, background-color 0.3s ease;
+}
+
+/* Clase que se activa temporalmente al hacer clic */
+.slider-button.clicked {
+  outline: 2px solid #ffffffd0;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+  .navbar a {
+    font-size: 13px;
   }
 
-  .navbar a {
-    margin-right: 10px;
-    font-size: 14px;
+  .carousel-indicators { 
+    bottom: -3rem; 
+  }
+
+ 
+}
+
+/* Galaxy S10, A41, A22, A33 (360 x 760) 
+@media (max-width: 360px) and (max-height: 760px) {
+
+}
+*/
+/* Galaxy S9, Galaxy S9+ (360 x 740) 
+@media (max-width: 360px) and (max-height: 740px) {
+  .logo-img {
+    width: 65px;
+  }
+  .slider {
+    height: 32vh;
+  }
+  .slider-button-float {
+    left: 73%;
+    bottom: 45px;
+    font-size: 12px;
+  }
+}
+*/
+/* iPhone 14/15 Pro Max (414 x 896) */
+@media (max-width: 414px) and (max-height: 896px) {
+  .logo-img {
+    width: 70px;
   }
 
   .slider {
-    height: 35vh;
-    position: relative;
-  }
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Altura del slider en vista del navegador */
+  overflow: hidden;
+}
+   .slider-container img {
+  flex: 0 0 100vw;
+  height: 80%;
+  object-fit: cover; /* Ajusta bien la imagen recortando si es necesario */
+}
+slider-button {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
 
-  .slider-button-float {
-    bottom: 50px;
-    left: 80%;
-    padding: 8px 15px;
-    font-size: 14px;
-  }
-
-  .slider-button {
-    font-size: 20px;
-    padding: 8px;
-  }
-
-  .slider-indicators {
-
-  bottom: 38rem; /* o 1rem */
-
-  }
+  /* Transición para que el efecto sea suave */
+  transition: outline 0.3s ease, background-color 0.3s ease;
 }
 
-/* Tablet */
-@media (min-width: 601px) and (max-width: 900px) {
+/* Clase que se activa temporalmente al hacer clic */
+.slider-button.clicked {
+  outline: 2px solid #ffffffd0;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+  .navbar a {
+    font-size: 13px;
+  }
+
+  .carousel-indicators { 
+    bottom: -3rem; 
+  }
+  /* ===============================
+   Botón flotante dentro del slider
+================================ */
+.slider-button-float {
+  position: absolute;
+  bottom: 90px;
+  left: 65%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #00000094;
+  padding: 12px 25px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+}
+
+/* iPhone 14/15 Pro Max (600 x 896) */
+@media (max-width: 650px)  {
+  .logo-img {
+    width: 70px;
+  }
+
+  .slider {
+  position: relative;
+  width: 100%;
+  height: 60vh; /* Altura del slider en vista del navegador */
+  overflow: hidden;
+}
+   .slider-container img {
+  flex: 0 0 100vw;
+  height: 80%;
+  object-fit: cover; /* Ajusta bien la imagen recortando si es necesario */
+}
+slider-button {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+
+  /* Transición para que el efecto sea suave */
+  transition: outline 0.3s ease, background-color 0.3s ease;
+}
+
+/* Clase que se activa temporalmente al hacer clic */
+.slider-button.clicked {
+  outline: 2px solid #ffffffd0;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+  .navbar a {
+    font-size: 13px;
+  }
+
+  .carousel-indicators { 
+    bottom: -3rem; 
+  }
+  /* ===============================
+   Botón flotante dentro del slider
+================================ */
+.slider-button-float {
+  position: absolute;
+  bottom: 90px;
+  left: 85%;
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #00000094;
+  padding: 12px 25px;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+}
+
+
+/* iPad Mini (768 x 1024) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .logo-img {
     width: 90px;
   }
-
-  .navbar {
-    top: 70px;
-    padding: 12px;
-  }
-
-  .navbar a {
-    margin-right: 15px;
-    font-size: 16px;
-  }
-
   .slider {
     height: 50vh;
   }
-
   .slider-button-float {
     bottom: 70px;
     left: 85%;
-    padding: 10px 20px;
     font-size: 16px;
+  }
+  .navbar a {
+    font-size: 17px;
+  }
+}
+
+/* iPad Air (2048 x 1536) */
+@media (min-width: 1024px) and (max-width: 2048px) {
+  .logo-img {
+    width: 100px;
+  }
+  .slider {
+    height: 55vh;
+  }
+  .slider-button-float {
+    font-size: 17px;
+  }
+}
+
+/* Estándar 1280 x 720 */
+@media (min-width: 1280px) and (max-width: 1366px) {
+  .logo-img {
+    width: 100px;
+  }
+  .slider {
+    height: 60vh;
+  }
+}
+
+/* Pantalla grande - Full HD 1920 x 1080 */
+@media (min-width: 1440px) {
+  .logo-img {
+    width: 120px;
+  }
+  .slider {
+    height: 65vh;
+  }
+  .slider-button-float {
+    left: 88%;
+    font-size: 18px;
   }
 }
