@@ -18,6 +18,7 @@ body {
   background-color: #000000;
   padding: 15px;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
   z-index: 1000;
   transition: top 0.3s ease; /* Transición suave al moverse */
@@ -59,6 +60,7 @@ body {
 /* Estilo del logo cuando haces scroll */
 .logo-img.scrolled {
   width: 80px; /* Se reduce el tamaño */
+  margin-top: 34px;
 }
 
 /* Ocultar visualmente (para SEO y accesibilidad) */
@@ -230,6 +232,59 @@ body {
    Estilos Responsivos
 ================================ */
 
+/* Compatibilidad con blackberry y nexus*/
+@media (max-width: 600px) and (min-height: 800px) {
+  .logo-img {
+    margin-top: 0;      /* elimina espacio extra */
+    width: 94px;
+    height: 94px;       /* o el tamaño que se alinee con tu menú */
+    vertical-align: middle; /* intenta alinear vertical si es inline */
+  }
+  .logo-img.scrolled {
+    margin-top: 24px;
+    width: 84px;
+    height: 84px;
+  }
+  .navbar {
+    align-items: center; /* si usas flexbox */
+  }
+}
+
+
+
+
+/*  iPad Mini / Galaxy Tab vertical (768px ancho) */
+@media (max-width: 768px) {
+  .slider {
+    height: 40vh;
+  }
+
+  .slider-container img {
+    height: 100%;
+
+  }
+
+  .navbar {
+    padding: 10px 20px;
+  }
+.logo-img{
+  margin-top: 10px;
+}
+.slider-button-float {
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  transform: none;
+  padding: 8px 25px; /* Más padding a los lados */
+  font-size: 14px;
+  white-space: nowrap; /* Para que no se quiebre el texto */
+  max-width: calc(100vw - 40px); /* Evita que el botón sobresalga en pantallas pequeñas */
+  box-sizing: border-box; /* Para que el padding cuente dentro del ancho */
+}
+
+}
+
+
 /* Dispositivos móviles (hasta 414px) */
 @media (max-width: 414px) {
   .navbar {
@@ -245,14 +300,16 @@ body {
 
   .logo-img {
     width: 90px;
+    margin-top: 20px;
   }
 
   .logo-img.scrolled {
     width: 60px;
+    margin-top: 24px;
   }
 
   .slider {
-    height: 40vh;
+    height: 35vh;
   }
   .slider img {
     width: 100%;
@@ -278,31 +335,12 @@ body {
     font-size: 22px;
   }
 }
+/* para dispositivos en vertical ipad mini 768 x 1024 */
+@media (min-width: 768px) and (max-width: 768px) and (min-height: 1024px) {
 
-/*  iPad Mini / Galaxy Tab vertical (768px ancho) */
-@media (max-width: 768px) {
-  .slider {
-    height: 50vh;
+  .logo-img {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
   }
-
-  .slider-container img {
-    height: 100%;
-  }
-
-  .navbar {
-    padding: 10px 20px;
-  }
-
-.slider-button-float {
-  position: absolute;
-  bottom: 70px;
-  right: 20px;
-  transform: none;
-  padding: 8px 25px; /* Más padding a los lados */
-  font-size: 14px;
-  white-space: nowrap; /* Para que no se quiebre el texto */
-  max-width: calc(100vw - 40px); /* Evita que el botón sobresalga en pantallas pequeñas */
-  box-sizing: border-box; /* Para que el padding cuente dentro del ancho */
-}
-
 }
