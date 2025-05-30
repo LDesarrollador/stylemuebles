@@ -138,22 +138,22 @@ body {
 ================================ */
 .slider-button-float {
   position: absolute;
-  bottom: 39%;
-  right: 50px;
+  bottom: 33%;
+  right: 110px;  /* 10px más a la derecha */
   transform: none;
-  padding: 12px 25px;
+  padding: 10px 15px;
   color: white;
-  background-color: #00000094;
+  background-color: #00000065;
   border-radius: 8px;
-  white-space: nowrap;
   font-weight: bold;
   z-index: 10;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
+
 
 .slider-button-float:hover {
   background-color: #4427017e;
@@ -164,7 +164,7 @@ body {
 ================================ */
 .slider-indicators {
   position: absolute;
-  bottom: 0rem;
+  bottom: 20rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -188,20 +188,6 @@ body {
   background-color: #000000;
 }
 
-/* ===============================
-   Botón reutilizable
-================================ */
-.button-link {
-  background-color: #0000004b;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: white;
-  border-radius: 5px;
-}
-
-.button-link:hover {
-  background-color: #5030023b;
-}
 
 /* ===============================
    Botón flotante de WhatsApp
@@ -248,10 +234,24 @@ body {
   .navbar {
     align-items: center; /* si usas flexbox */
   }
+
+  .slider-indicators{
+  bottom: 46%;
 }
+    h2.text-center {
+    margin-top: 60px;
+  }
+  .slider-button-float {
+    right: auto;  
+    bottom: 2px;            /* quita cualquier anclaje a la derecha */
+    left: 50%;                /* posición horizontal al centro */
+    transform: translateX(-50%);  /* centra completamente */
 
-
-
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
+}
 
 /*  iPad Mini / Galaxy Tab vertical (768px ancho) */
 @media (max-width: 768px) {
@@ -269,17 +269,6 @@ body {
   }
 .logo-img{
   margin-top: 10px;
-}
-.slider-button-float {
-  position: absolute;
-  bottom: 70px;
-  right: 20px;
-  transform: none;
-  padding: 8px 25px; /* Más padding a los lados */
-  font-size: 14px;
-  white-space: nowrap; /* Para que no se quiebre el texto */
-  max-width: calc(100vw - 40px); /* Evita que el botón sobresalga en pantallas pequeñas */
-  box-sizing: border-box; /* Para que el padding cuente dentro del ancho */
 }
 
 }
@@ -317,18 +306,25 @@ body {
     display: block;
   }
   .slider-button-float {
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-10%);
-    padding: 8px 15px;
-    font-size: 14px;
-  }
+    right: auto;  
+    bottom: 2px;            /* quita cualquier anclaje a la derecha */
+    left: 50%;                /* posición horizontal al centro */
+    transform: translateX(-50%);  /* centra completamente */
 
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 6px;
+  }
   .slider-button {
     font-size: 11px;
     padding: 10px;
   }
-
+  h2.text-center {
+    margin-top: 60px;
+  }
+.slider-indicators{
+  bottom: 46%;
+}
   .whatsapp-button {
     width: 50px;
     height: 50px;
@@ -343,4 +339,58 @@ body {
     height: 100px;
     margin-top: 5px;
   }
+    .slider-indicators {
+    bottom: 48%;
+  }
+
+  h2.text-center {
+    margin-top: 50px;
+  }
 }
+/* para dispositivos Kindle Fire HDX (800 x 1280) */
+/* === Kindle Fire HDX (800 x 1280) en vertical === */
+@media (min-width: 800px) and (max-width: 800px) and (min-height: 1280px) and (max-height: 1280px) {
+  .slider{
+    height: 40vh;
+  }
+  .slider-indicators {
+    bottom: 36%;
+  }
+
+  h2.text-center {
+    margin-top: 1px;
+  }
+}
+/* para Medium Screen 1024 x 800 */
+/* === Medium Screen 1024 x 800 (horizontal) === */
+@media (min-width: 1024px) and (max-width: 1024px) and (min-height: 800px) and (max-height: 800px) {
+  .slider-indicators {
+    bottom: 30%;
+  }
+
+  h2.text-center {
+    margin-top: 20px;
+  }
+}
+/* === MacBook 1200 x 800 (horizontal) === */
+@media (min-width: 1200px) and (max-width: 1200px) and (min-height: 800px) and (max-height: 800px) {
+  .slider-indicators {
+    bottom: 30%;
+  }
+
+  h2.text-center {
+    margin-top: 20px;
+  }
+}
+
+  /* Para dispositivos de 830px x 1120*/
+  @media (min-width: 830px) and (max-width: 840px) and (min-height: 1100px) and (max-height: 1120px) {
+  .slider-indicators {
+    bottom: 36%;
+  }
+
+  h2.text-center {
+    margin-top: 20px;
+  }
+}
+
