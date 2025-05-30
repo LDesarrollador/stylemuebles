@@ -1,0 +1,301 @@
+/* ===============================
+   Fuente principal y margen top
+================================ */
+body {
+  font-family: "Open Sans", sans-serif;
+  margin-top: 80px; /* Espacio superior para no tapar el logo */
+}
+
+/* ===============================
+   Menú de navegación superior
+================================ */
+/* Menú fijo con transición */
+.navbar {
+  position: fixed;
+  top: 80px; /* Separación desde el top al cargar */
+  left: 0;
+  width: 100%;
+  background-color: #000000;
+  padding: 15px;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  transition: top 0.3s ease; /* Transición suave al moverse */
+}
+.navbar a:hover {
+  /* background-color: #5e5959ad; */
+  color: #e45d1e; /* Color acento elegante */
+}
+
+.navbar.scrolled {
+  top: 0 !important; /* Se pega al borde superior al hacer scroll */
+}
+
+.navbar a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 13px; /* Tamaño responsivo base */
+}
+
+/* ===============================
+   Logo flotante en la esquina
+================================ */
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 0px;
+  z-index: 1001;
+  transition: top 0.3s ease; /* Transición suave */
+}
+
+/* Imagen del logo base */
+.logo-img {
+  width: 120px;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+/* Estilo del logo cuando haces scroll */
+.logo-img.scrolled {
+  width: 80px; /* Se reduce el tamaño */
+}
+
+/* Ocultar visualmente (para SEO y accesibilidad) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===============================
+   Slider principal (carrusel)
+================================ */
+.slider {
+  margin-top: 122px;
+  width: 100vw;
+  height: 30vh;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.slider-container {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+
+.slider-container img {
+  flex: 0 0 100vw;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===============================
+   Flechas de navegación del slider
+================================ */
+.slider-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.slider-button {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: outline 0.3s ease, background-color 0.3s ease;
+}
+
+.slider-button.clicked {
+  outline: 2px solid #ffffffd0;
+  background-color: rgba(0, 0, 0, 0.295);
+}
+
+/* ===============================
+   Botón flotante dentro del slider
+================================ */
+.slider-button-float {
+  position: absolute;
+  bottom: 39%;
+  right: 50px;
+  transform: none;
+  padding: 12px 25px;
+  color: white;
+  background-color: #00000094;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-weight: bold;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.slider-button-float:hover {
+  background-color: #4427017e;
+}
+
+/* ===============================
+   Indicadores del slider
+================================ */
+.slider-indicators {
+  margin-top: 2rem; /* Empújalo un poco hacia arriba */
+  position: relative; /* Ya no necesita 'absolute' */
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.slider-indicators span {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(82, 79, 79, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.slider-indicators span.active {
+  background-color: #000000;
+}
+
+/* ===============================
+   Botón reutilizable
+================================ */
+.button-link {
+  background-color: #0000004b;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.button-link:hover {
+  background-color: #5030023b;
+}
+
+/* ===============================
+   Botón flotante de WhatsApp
+================================ */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  color: white;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e;
+}
+
+/* ===============================
+   Estilos Responsivos
+================================ */
+
+/* Dispositivos móviles (hasta 414px) */
+@media (max-width: 414px) {
+  .navbar {
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos al lado derecho */
+    padding: 10px;
+  }
+
+  .navbar a {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .logo-img {
+    width: 90px;
+  }
+
+  .logo-img.scrolled {
+    width: 60px;
+  }
+
+  .slider {
+    height: 40vh;
+  }
+  .slider img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .slider-button-float {
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-10%);
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .slider-button {
+    font-size: 11px;
+    padding: 10px;
+  }
+
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+}
+
+/*  iPad Mini / Galaxy Tab vertical (768px ancho) */
+@media (max-width: 768px) {
+  .slider {
+    height: 50vh;
+  }
+
+  .slider-container img {
+    height: 100%;
+  }
+
+  .navbar {
+    padding: 10px 20px;
+  }
+
+.slider-button-float {
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  transform: none;
+  padding: 8px 25px; /* Más padding a los lados */
+  font-size: 14px;
+  white-space: nowrap; /* Para que no se quiebre el texto */
+  max-width: calc(100vw - 40px); /* Evita que el botón sobresalga en pantallas pequeñas */
+  box-sizing: border-box; /* Para que el padding cuente dentro del ancho */
+}
+
+}

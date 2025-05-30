@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Codificación de caracteres y adaptabilidad para diferentes dispositivos -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Título de la página -->
+    <title>
+      Proyectos de Cocinas y Muebles a Medida en Chile y Perú | STYLE
+    </title>
+
+    <!-- Ícono del navegador -->
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
+
+    <!-- Meta descripción SEO -->
+    <meta
+      name="description"
+      content="Galería de cocinas y muebles a medida realizados por STYLE en Chile y Perú. Inspírate con nuestros proyectos personalizados en melamina de alta calidad."
+    />
+
+    <!-- Palabras clave SEO -->
+    <meta
+      name="keywords"
+      content="galería de muebles, proyectos de cocinas, muebles a medida, muebles modernos, melamina, diseño de interiores, muebles en Chile, muebles en Perú"
+    />
+
+    <!-- Autor de la página -->
+    <meta name="author" content="STYLE Muebles a Medida" />
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Proyectos de Muebles a Medida | STYLE Chile y Perú"
+    />
+    <meta
+      property="og:description"
+      content="Explora nuestros proyectos de cocinas y muebles a medida en melamina realizados en Chile y Perú. Calidad, diseño y funcionalidad."
+    />
+    <meta
+      property="og:image"
+      content="https://stylemuebles.com/imagenes/og-image.jpg"
+    />
+    <meta property="og:url" content="https://stylemuebles.com" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Galería de Proyectos de Muebles a Medida | STYLE"
+    />
+    <meta
+      name="twitter:description"
+      content="Revisa nuestras cocinas y muebles personalizados realizados en todo Chile y Perú."
+    />
+    <meta
+      name="twitter:image"
+      content="https://stylemuebles.com/imagenes/og-image.jpg"
+    />
+
+    <!-- Tipografía -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS personalizado -->
+    <link href="css/proyectos.css" rel="stylesheet" />
+
+    <!-- Iconos de FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <!-- Logo principal -->
+      <div class="logo">
+        <img
+          src="imagenes/logo-grande.jpg"
+          alt="Logo de STYLE, Muebles a Medida"
+          class="logo-img"
+          id="logo"
+        />
+      </div>
+
+      <!-- Menú de navegación -->
+      <nav class="navbar" role="navigation" aria-label="Menú principal">
+        <ul class="flex space-x-4">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pb-22">
+      <h1 class="visually-hidden">Galería de Proyectos | STYLE Muebles</h1>
+
+      <!-- Slider de imágenes principales -->
+      <div class="slider">
+        <div class="slider-container" id="slider-container">
+          <img
+            src="imagenes/slide/bannerproyectos1.png"
+            alt="Proyecto de cocina moderna con acabados en madera"
+          />
+          <img
+            src="imagenes/slide/bannerproyectos2.png"
+            alt="Proyecto de cocina con isla central"
+          />
+          <img
+            src="imagenes/slide/bannerproyectos3.png"
+            alt="Diseño de muebles de cocina en madera natural"
+          />
+        </div>
+
+        <!-- Controles del slider -->
+        <div class="slider-controls">
+          <div
+            class="slider-button"
+            onclick="prevSlide()"
+            role="button"
+            aria-label="Anterior"
+            tabindex="0"
+          >
+            &#10094;
+          </div>
+          <div
+            class="slider-button"
+            onclick="nextSlide()"
+            role="button"
+            aria-label="Siguiente"
+            tabindex="0"
+          >
+            &#10095;
+          </div>
+        </div>
+      </div>
+      <div class="slider-indicators" id="slider-indicators"></div>
+
+      <!-- Encabezado SEO -->
+      <h2 class="text-center mt-10 text-2xl font-bold text-gray-800">
+        Proyectos de cocinas y muebles a medida en Chile y Perú
+      </h2>
+
+      <!-- Frase de presentación -->
+      <div class="text-center mt-1">
+        <p>
+          Conoce algunos de nuestros trabajos realizados en melamina de alta
+          calidad.
+        </p>
+      </div>
+
+      <!-- Galería de imágenes de proyectos -->
+      <div class="mt-4 px-2 max-w-6xl mx-auto mb-10">
+        <h3 class="text-center text-lg font-semibold mb-6">
+          Galería de proyectos recientes
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="imagenes/galeria/proyecto1.webp"
+              alt="Cocina moderna con gabinetes blancos y madera clara"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="imagenes/galeria/proyecto2.webp"
+              alt="Vanitorio a medida con lavamanos doble"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="imagenes/galeria/proyecto3.webp"
+              alt="Diseño de cocina en melamina blanca y madera"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="imagenes/galeria/proyecto 4.jpg"
+              alt="Closet moderno a medida en melamina blanca"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="imagenes/galeria/proyecto 5.JPG"
+              alt="Proyecto de vanitorio personalizado con espejo iluminado"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+          <div class="rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="imagenes/galeria/proyecto 6.jpg"
+              alt="Mueble de baño moderno con espacio de almacenaje"
+              class="w-full h-64 object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      href="https://wa.me/1234567890"
+      class="whatsapp-button"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar vía WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Pie de página -->
+    <footer class="footer text-center py-4 bg-gray-100 text-gray-800">
+      <p>&copy; 2025 STYLE Muebles. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script personalizado -->
+    <script src="js/proyectos.js"></script>
+  </body>
+</html>

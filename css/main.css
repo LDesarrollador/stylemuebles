@@ -22,6 +22,10 @@ body {
   z-index: 1000;
   transition: top 0.3s ease; /* Transición suave al moverse */
 }
+.navbar a:hover {
+  /* background-color: #5e5959ad; */
+  color: #e45d1e; /* Color acento elegante */
+}
 
 .navbar.scrolled {
   top: 0 !important; /* Se pega al borde superior al hacer scroll */
@@ -158,7 +162,7 @@ body {
 ================================ */
 .slider-indicators {
   position: absolute;
-  bottom: 1rem;
+  bottom: 0rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
