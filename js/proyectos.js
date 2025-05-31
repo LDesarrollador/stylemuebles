@@ -1,50 +1,42 @@
-function actualizarMenu() {
-  const navbar = document.querySelector(".navbar");
-  const logo = document.querySelector(".logo-img");
-
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-    logo.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-    logo.classList.remove("scrolled");
-  }
-}
-
-window.addEventListener("scroll", actualizarMenu);
-window.addEventListener("DOMContentLoaded", actualizarMenu);
-
-// Script para el slider
-
 // ==============================
 // Variables y configuración inicial
 // ==============================
 
-let currentIndex = 0; // Índice actual del slide
-const sliderContainer = document.getElementById("slider-container"); // Contenedor del carrusel
-const slides = document.querySelectorAll("#slider-container img"); // Todas las imágenes del slider
+// Índice actual del slide
+let currentIndex = 0;
+
+// Contenedor del carrusel
+const sliderContainer = document.getElementById("slider-container");
+
+// Todas las imágenes del slider
+const slides = document.querySelectorAll("#slider-container img");
+
+// Total de slides, constante porque no cambia durante la ejecución
+const totalSlides = slides.length;
+
+// Contenedor de indicadores (usa ID para evitar duplicidad)
+const indicatorContainer = document.getElementById("slider-indicators");
 
 // Ajusta el ancho del contenedor dinámicamente basado en la cantidad de imágenes
+sliderContainer.style.width = `${totalSlides * 100}vw`;
 
 // ==============================
 // Función principal para mostrar un slide específico
 // ==============================
 function showSlide(index) {
-  const totalSlides = slides.length;
-
-  // Verifica y ajusta el índice si está fuera de rango
+  // Ajusta el índice para que no se salga de rango
   if (index >= totalSlides) {
-    currentIndex = 0; // vuelve al primero
+    currentIndex = 0; // vuelve al primer slide
   } else if (index < 0) {
-    currentIndex = totalSlides - 1; // va al último
+    currentIndex = totalSlides - 1; // va al último slide
   } else {
     currentIndex = index;
   }
 
-  // Mueve el contenedor de slides usando transform
+  // Mueve el contenedor usando transform para mostrar el slide correcto
   sliderContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
 
-  // Actualiza los indicadores visuales
+  // Actualiza los indicadores para reflejar el slide activo
   updateIndicators();
 }
 
@@ -68,17 +60,21 @@ let slideInterval = setInterval(nextSlide, 5000);
 
 // Detiene el avance automático cuando el usuario pasa el mouse sobre el slider
 const slider = document.querySelector(".slider");
+
 slider.addEventListener("mouseenter", () => clearInterval(slideInterval));
 slider.addEventListener("mouseleave", () => {
   slideInterval = setInterval(nextSlide, 5000);
 });
 
-// Animación automatica despues del clickeado en el boton de avanzar o retroceder del slide
+// ==============================
+// Animación del botón al hacer clic
+// ==============================
+
 document.querySelectorAll(".slider-button").forEach((button) => {
   button.addEventListener("click", () => {
     button.classList.add("clicked");
 
-    // Espera 500ms y luego remueve la clase para que se desvanezca
+    // Remueve la clase 'clicked' después de 500ms para efecto visual
     setTimeout(() => {
       button.classList.remove("clicked");
     }, 500);
@@ -89,46 +85,43 @@ document.querySelectorAll(".slider-button").forEach((button) => {
 // Inicialización al cargar la página
 // ==============================
 
-// Muestra el primer slide al iniciar
+// Mostrar el primer slide al iniciar
 showSlide(currentIndex);
 
 // ==============================
 // Indicadores de navegación
 // ==============================
 
-const indicatorContainer = document.getElementById("slider-indicators");
-
-// Crea un punto por cada imagen del slider
+// Crea un punto por cada imagen del slider y agrega evento para cambiar slide al hacer clic
 slides.forEach((_, i) => {
   const dot = document.createElement("span");
-  dot.addEventListener("click", () => showSlide(i)); // Al hacer clic cambia al slide correspondiente
+  dot.addEventListener("click", () => showSlide(i));
   indicatorContainer.appendChild(dot);
 });
 
 // ==============================
-// Activar y actualizar los indicadores
+// Función para actualizar los indicadores activos
 // ==============================
 function updateIndicators() {
-  const dots = document.querySelectorAll(".slider-indicators span");
+  const dots = indicatorContainer.querySelectorAll("span");
   dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentIndex); // Solo el actual tiene la clase 'active'
+    dot.classList.toggle("active", i === currentIndex);
   });
 }
 
 // ==============================
-// Pausar animación automática al pasar por indicadores
+// Pausar la animación automática al pasar el mouse sobre indicadores
 // ==============================
-
-const indicatorsContainer = document.querySelector(".slider-indicators");
-
-indicatorsContainer.addEventListener("mouseenter", () =>
+indicatorContainer.addEventListener("mouseenter", () =>
   clearInterval(slideInterval)
 );
-indicatorsContainer.addEventListener("mouseleave", () => {
+indicatorContainer.addEventListener("mouseleave", () => {
   slideInterval = setInterval(nextSlide, 5000);
 });
 
-// Logo animacion
+// ==============================
+// Animación del logo y navbar al hacer scroll
+// ==============================
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   const logoImg = document.getElementById("logo");

@@ -3,7 +3,7 @@
 ================================ */
 body {
   font-family: "Open Sans", sans-serif;
-  margin-top: 80px; /* Espacio superior para no tapar el logo */
+  overflow-x: hidden; 
 }
 
 /* ===============================
@@ -80,29 +80,27 @@ body {
    Slider principal (carrusel)
 ================================ */
 .slider {
-  position: relative;
-  width: 100%;
-  height: 60vh;
+  margin-top: 134px;
+  width: 100vw;
+  height: 38vh;
   overflow: hidden;
-}
-
-.slider img {
-  width: 100%;
-  height: auto;
+  position: relative;
+  margin-bottom: 1rem;
 }
 
 .slider-container {
   display: flex;
   transition: transform 0.5s ease;
-  height: 100%;
+  width: calc(100vw * 3); /* Asume 3 imágenes, ajusta si son más */
 }
 
 .slider-container img {
   flex: 0 0 100vw;
-  height: 90%;
+  width: 100vw;
+  height: 100%;
   object-fit: cover;
+  display: block;
 }
-
 /* ===============================
    Flechas de navegación del slider
 ================================ */
@@ -164,7 +162,7 @@ body {
 ================================ */
 .slider-indicators {
   position: absolute;
-  bottom: 20rem;
+  bottom: 26rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -173,6 +171,7 @@ body {
   gap: 0.5rem;
   z-index: 10;
   padding: 0 1rem;
+  
 }
 
 .slider-indicators span {
@@ -236,7 +235,7 @@ body {
   }
 
   .slider-indicators{
-  bottom: 46%;
+  bottom: 40%;
 }
     h2.text-center {
     margin-top: 60px;
@@ -256,6 +255,7 @@ body {
 /*  iPad Mini / Galaxy Tab vertical (768px ancho) */
 @media (max-width: 768px) {
   .slider {
+    bottom: 10px;
     height: 40vh;
   }
 
@@ -298,6 +298,7 @@ body {
   }
 
   .slider {
+    bottom: 9px;
     height: 35vh;
   }
   .slider img {
@@ -323,7 +324,7 @@ body {
     margin-top: 60px;
   }
 .slider-indicators{
-  bottom: 46%;
+  bottom: 40%;
 }
   .whatsapp-button {
     width: 50px;
@@ -331,6 +332,17 @@ body {
     font-size: 22px;
   }
 }
+
+/* === Microsoft Lumia 950 (360 x 640) === */
+@media (max-width: 360px) and (max-height: 640px) {
+  .slider{
+    bottom: 9px;
+  }
+  .slider-indicators {
+    bottom: 35%;
+  }
+}
+
 /* para dispositivos en vertical ipad mini 768 x 1024 */
 @media (min-width: 768px) and (max-width: 768px) and (min-height: 1024px) {
 
@@ -340,7 +352,7 @@ body {
     margin-top: 5px;
   }
     .slider-indicators {
-    bottom: 48%;
+    bottom: 44%;
   }
 
   h2.text-center {
@@ -354,18 +366,18 @@ body {
     height: 40vh;
   }
   .slider-indicators {
-    bottom: 36%;
+    bottom: 48%;
   }
 
   h2.text-center {
-    margin-top: 1px;
+    bottom: 50px;
   }
 }
 /* para Medium Screen 1024 x 800 */
 /* === Medium Screen 1024 x 800 (horizontal) === */
 @media (min-width: 1024px) and (max-width: 1024px) and (min-height: 800px) and (max-height: 800px) {
   .slider-indicators {
-    bottom: 30%;
+    bottom: 43%;
   }
 
   h2.text-center {
@@ -374,8 +386,11 @@ body {
 }
 /* === MacBook 1200 x 800 (horizontal) === */
 @media (min-width: 1200px) and (max-width: 1200px) and (min-height: 800px) and (max-height: 800px) {
+  .slider{
+    height: 34vh;
+  }
   .slider-indicators {
-    bottom: 30%;
+    bottom: 47%;
   }
 
   h2.text-center {
@@ -386,7 +401,7 @@ body {
   /* Para dispositivos de 830px x 1120*/
   @media (min-width: 830px) and (max-width: 840px) and (min-height: 1100px) and (max-height: 1120px) {
   .slider-indicators {
-    bottom: 36%;
+    bottom: 48%;
   }
 
   h2.text-center {
