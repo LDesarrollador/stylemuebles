@@ -79,9 +79,10 @@ body {
    Slider principal
 ================================ */
 .slider {
-  margin-top: 12vh;
+  margin-top: 6rem;
   width: 100vw;
-  height: 38vh;
+  aspect-ratio: 16 / 9; /* ✅ NUEVO: relación estable */
+  max-height: 500px;     /* ✅ Límite superior opcional */
   overflow: hidden;
   position: relative;
   margin-bottom: 1rem;
@@ -159,7 +160,7 @@ body {
 ================================ */
 .slider-indicators {
   position: absolute;
-  bottom: 47vh;
+  bottom: rem;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -294,5 +295,20 @@ body {
   .slider-button-float {
     bottom: 0.125rem;
     font-size: 0.75rem;
+  }
+}
+@media (orientation: landscape) and (max-width: 850px) {
+  .slider {
+    margin-top: 18vh; /* menos margen en horizontal */
+    aspect-ratio: 16 / 9;
+    height: 8%;
+  }
+
+  .slider-indicators {
+    bottom: -8rem; /* más cerca del fondo */
+  }
+
+  .slider-button-float {
+    bottom: 0.5rem;
   }
 }
