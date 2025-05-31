@@ -119,14 +119,14 @@ indicatorContainer.addEventListener("mouseleave", () => {
   slideInterval = setInterval(nextSlide, 5000);
 });
 
-// ==============================
 // Animación del logo y navbar al hacer scroll
 // ==============================
 window.addEventListener("scroll", function () {
   const navbar = document.querySelector(".navbar");
   const logoImg = document.getElementById("logo");
 
-  if (window.scrollY > 50) {
+  // Se activa al más mínimo scroll
+  if (window.scrollY > 20) {
     navbar.classList.add("scrolled");
     logoImg.classList.add("scrolled");
   } else {
