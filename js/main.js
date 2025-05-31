@@ -2,46 +2,39 @@
 // Variables y configuración inicial
 // ==============================
 
-// Índice actual del slide
 let currentIndex = 0;
 
-// Contenedor del carrusel
 const sliderContainer = document.getElementById("slider-container");
-
-// Todas las imágenes del slider
 const slides = document.querySelectorAll("#slider-container img");
-
-// Total de slides, constante porque no cambia durante la ejecución
 const totalSlides = slides.length;
-
-// Contenedor de indicadores (usa ID para evitar duplicidad)
 const indicatorContainer = document.getElementById("slider-indicators");
+const slider = document.querySelector(".slider");
 
-// Ajusta el ancho del contenedor dinámicamente basado en la cantidad de imágenes
-sliderContainer.style.width = `${totalSlides * 100}vw`;
+let slideInterval;
 
 // ==============================
-// Función principal para mostrar un slide específico
+// Función para mostrar un slide específico
 // ==============================
 function showSlide(index) {
-  // Ajusta el índice para que no se salga de rango
   if (index >= totalSlides) {
-    currentIndex = 0; // vuelve al primer slide
+    currentIndex = 0;
   } else if (index < 0) {
-    currentIndex = totalSlides - 1; // va al último slide
+    currentIndex = totalSlides - 1;
   } else {
     currentIndex = index;
   }
 
-  // Mueve el contenedor usando transform para mostrar el slide correcto
-  sliderContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
+  // Usar px en lugar de vw para mayor precisión
+  const slideWidth = sliderContainer.offsetWidth / totalSlides;
+  sliderContainer.style.transform = `translateX(-${
+    currentIndex * slideWidth
+  }px)`;
 
-  // Actualiza los indicadores para reflejar el slide activo
   updateIndicators();
 }
 
 // ==============================
-// Controles manuales del slider
+// Controles manuales
 // ==============================
 function nextSlide() {
   showSlide(currentIndex + 1);
@@ -52,55 +45,27 @@ function prevSlide() {
 }
 
 // ==============================
-// Control automático del slider
+// Inicialización del intervalo de slide automático
 // ==============================
-
-// Avanza automáticamente cada 5 segundos
-let slideInterval = setInterval(nextSlide, 5000);
-
-// Detiene el avance automático cuando el usuario pasa el mouse sobre el slider
-const slider = document.querySelector(".slider");
-
-slider.addEventListener("mouseenter", () => clearInterval(slideInterval));
-slider.addEventListener("mouseleave", () => {
+function startSlideInterval() {
+  clearInterval(slideInterval);
   slideInterval = setInterval(nextSlide, 5000);
-});
+}
 
 // ==============================
-// Animación del botón al hacer clic
+// Inicialización de indicadores
 // ==============================
-
-document.querySelectorAll(".slider-button").forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.add("clicked");
-
-    // Remueve la clase 'clicked' después de 500ms para efecto visual
-    setTimeout(() => {
-      button.classList.remove("clicked");
-    }, 500);
+function initIndicators() {
+  slides.forEach((_, i) => {
+    const dot = document.createElement("span");
+    dot.classList.add("slider-dot");
+    dot.addEventListener("click", () => showSlide(i));
+    indicatorContainer.appendChild(dot);
   });
-});
+}
 
 // ==============================
-// Inicialización al cargar la página
-// ==============================
-
-// Mostrar el primer slide al iniciar
-showSlide(currentIndex);
-
-// ==============================
-// Indicadores de navegación
-// ==============================
-
-// Crea un punto por cada imagen del slider y agrega evento para cambiar slide al hacer clic
-slides.forEach((_, i) => {
-  const dot = document.createElement("span");
-  dot.addEventListener("click", () => showSlide(i));
-  indicatorContainer.appendChild(dot);
-});
-
-// ==============================
-// Función para actualizar los indicadores activos
+// Actualiza los indicadores activos
 // ==============================
 function updateIndicators() {
   const dots = indicatorContainer.querySelectorAll("span");
@@ -110,27 +75,69 @@ function updateIndicators() {
 }
 
 // ==============================
-// Pausar la animación automática al pasar el mouse sobre indicadores
+// Animación de botones al hacer clic
 // ==============================
-indicatorContainer.addEventListener("mouseenter", () =>
-  clearInterval(slideInterval)
-);
-indicatorContainer.addEventListener("mouseleave", () => {
-  slideInterval = setInterval(nextSlide, 5000);
-});
+function initButtonAnimations() {
+  document.querySelectorAll(".slider-button").forEach((button) => {
+    button.addEventListener("click", () => {
+      button.classList.add("clicked");
+      setTimeout(() => button.classList.remove("clicked"), 500);
+    });
+  });
+}
 
-// Animación del logo y navbar al hacer scroll
 // ==============================
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  const logoImg = document.getElementById("logo");
-
-  // Se activa al más mínimo scroll
-  if (window.scrollY > 20) {
-    navbar.classList.add("scrolled");
-    logoImg.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-    logoImg.classList.remove("scrolled");
+// Eventos para pausa y reanudación automática
+// ==============================
+function initPauseOnHover() {
+  if (slider) {
+    slider.addEventListener("mouseenter", () => clearInterval(slideInterval));
+    slider.addEventListener("mouseleave", startSlideInterval);
   }
-});
+  if (indicatorContainer) {
+    indicatorContainer.addEventListener("mouseenter", () =>
+      clearInterval(slideInterval)
+    );
+    indicatorContainer.addEventListener("mouseleave", startSlideInterval);
+  }
+}
+
+// ==============================
+// Animación navbar y logo al hacer scroll
+// ==============================
+function initScrollAnimation() {
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+    const logoImg = document.getElementById("logo");
+    if (!navbar || !logoImg) return;
+
+    if (window.scrollY > 20) {
+      navbar.classList.add("scrolled");
+      logoImg.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+      logoImg.classList.remove("scrolled");
+    }
+  });
+}
+
+// ==============================
+// Función de inicialización general
+// ==============================
+function initSlider() {
+  if (!sliderContainer || totalSlides === 0 || !indicatorContainer) return;
+
+  // Ajusta ancho total del contenedor slider para acomodar todas las imágenes en fila
+  sliderContainer.style.width = `${totalSlides * 100}vw`;
+
+  initIndicators();
+  initButtonAnimations();
+  initPauseOnHover();
+  initScrollAnimation();
+
+  showSlide(currentIndex);
+  startSlideInterval();
+}
+
+// Ejecuta la inicialización cuando la página está lista
+document.addEventListener("DOMContentLoaded", initSlider);
