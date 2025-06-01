@@ -160,7 +160,7 @@ body {
 ================================ */
 .slider-indicators {
   position: absolute;
-  bottom: rem;
+  /* bottom: rem; */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -208,107 +208,111 @@ body {
 }
 
 /* ===============================
-   Estilos responsivos generales
+   Estilos responsivos 
 ================================ */
 
-@media (max-width: 768px) {
-  .navbar {
-    justify-content: flex-end;
-    padding: 0.625rem;
-  }
-
-  .navbar a {
-    font-size: 0.75rem;
-    margin-right: 0.625rem;
-  }
-
-  .logo-img {
-    width: 5.625rem;
-    margin-top: 1.25rem;
-  }
-
-  .logo-img.scrolled {
-    width: 3.75rem;
-    margin-top: 1.5rem;
-  }
-
-  .navbar {
-    padding: 0.625rem 1.25rem;
-  }
-
-  .slider {
-    height: 35vh;
-    bottom: -1vh;
-  }
-
-  .slider-indicators {
-    bottom: 48%;
-  }
-
-  .slider-button-float {
-    left: 50%;
-    right: auto;
-    bottom: 0.125rem;
-    transform: translateX(-50%);
-    font-size: 0.75rem;
-    padding: 0.375rem 0.75rem;
-    border-radius: 0.375rem;
-  }
-
-  .slider-button {
-    font-size: 0.6875rem;
-    padding: 0.625rem;
-  }
-
-  .whatsapp-button {
-    width: 3.125rem;
-    height: 3.125rem;
-    font-size: 1.375rem;
-  }
-}
-
-@media (max-width: 414px) {
-  .navbar {
-    justify-content: flex-end;
-    padding: 0.625rem;
-  }
-
-  .navbar a {
-    font-size: 0.75rem;
-    margin-right: 0.625rem;
-  }
-
-  .logo-img {
-    width: 5.625rem;
-    margin-top: 1.25rem;
-  }
-
-  .logo-img.scrolled {
-    width: 3.75rem;
-    margin-top: 1.5rem;
-  }
-
-  .slider {
-    height: 35vh;
-  }
-
-  .slider-button-float {
-    bottom: 0.125rem;
-    font-size: 0.75rem;
-  }
-}
 @media (orientation: landscape) and (max-width: 850px) {
   .slider {
-    margin-top: 18vh; /* menos margen en horizontal */
+    margin-top: 21vh; /* menos margen en horizontal */
     aspect-ratio: 16 / 9;
-    height: 8%;
+    height: 50vh;
   }
 
   .slider-indicators {
-    bottom: -8rem; /* más cerca del fondo */
+    bottom: 6rem; /* más cerca del fondo */
   }
 
   .slider-button-float {
     bottom: 0.5rem;
+  }
+}
+
+/* === Dispositivos específicos === */
+
+@media screen and (max-width: 415px) and (max-height: 920px) {
+  /* Samsung Galaxy A31 y similares */
+  .slider-indicators {
+    bottom: 29rem;
+  }
+
+  .slider-button-float {
+    bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 395px) and (max-height: 850px) {
+  /* iPhone 12-14 */
+  .slider-indicators {
+    bottom: 23rem;
+  }
+
+  .slider-button-float {
+    bottom: 0.75rem;
+  }
+}
+
+/* === Dispositivos populares en LATAM === */
+
+@media (max-width: 720px) and (max-height: 1600px) {
+  /* Samsung A05 / A15, Xiaomi 13C/Note 13, Moto G24/G54, HONOR X8b */
+  .slider-indicators {
+    bottom: 23rem;
+  }
+
+  .slider-button-float {
+    bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 600px) and (max-height: 960px) {
+  /* Dispositivos pequeños en vertical */
+  .slider-indicators {
+    bottom: 31rem;
+  }
+
+  .slider-button-float {
+    bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 600px) and (max-height: 800px) {
+  /* Dispositivos pequeños o teclado abierto */
+  .slider-indicators {
+    bottom: 21rem;
+  }
+
+  .slider-button-float {
+    bottom: 1rem;
+  }
+}
+
+/* Dispositivos 414 x 736  iphone 6 al 8*/
+@media (max-width: 414px) and (max-height: 736px) {
+  .slider-indicators {
+    bottom: 24rem;
+  }
+
+  .slider-button-float {
+    bottom: 1rem;
+  }
+}
+/* Dispositivos compactos en android 360 x 740 */
+@media (max-width: 360px) and (max-height: 740px) {
+  .slider-indicators {
+    bottom: 26rem;
+  }
+
+  .slider-button-float {
+    bottom: 1rem;
+  }
+}
+/* Dispositivos Antiguos 360 x 640 */
+@media (max-width: 360px) and (max-height: 640px) {
+  .slider-indicators {
+    bottom: 19rem;  /*este no funciona*/
+  }
+
+  .slider-button-float {
+    bottom: 0.75rem;
   }
 }
