@@ -102,25 +102,47 @@
         </ul>
       </nav>
     </header>
-
     <main class="pb-22">
       <h1 class="visually-hidden">Galería de Proyectos | STYLE Muebles</h1>
 
       <!-- Slider de imágenes principales -->
       <div class="slider">
         <div class="slider-container" id="slider-container">
-          <img
-            src="imagenes/slide/bannerproyectos1.png"
-            alt="Proyecto de cocina moderna con acabados en madera"
-          />
-          <img
-            src="imagenes/slide/bannerproyectos2.png"
-            alt="Proyecto de cocina con isla central"
-          />
-          <img
-            src="imagenes/slide/bannerproyectos3.png"
-            alt="Diseño de muebles de cocina en madera natural"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/proyectos/slide/mobile/proyectobannerslide1.png"
+            />
+            <img
+              src="imagenes/proyectos/slide/bannerproyectos1.png"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/proyectos/slide/mobile/proyectobannerslide2.png"
+            />
+            <img
+              src="imagenes/proyectos/slide/bannerproyectos2.png"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/proyectos/slide/mobile/proyectobannerslide3.png"
+            />
+            <img
+              src="imagenes/proyectos/slide/bannerproyectos3.png"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
         </div>
 
         <!-- Controles del slider -->
@@ -145,10 +167,12 @@
           </div>
         </div>
       </div>
+
+      <!-- indicadores del slide -->
       <div class="slider-indicators" id="slider-indicators"></div>
 
       <!-- Encabezado SEO -->
-      <h2 class="text-center mt-10 text-2xl font-bold text-gray-800">
+      <h2 class="text-center mt-8 text-2xl font-bold text-gray-800">
         Proyectos de cocinas y muebles a medida en Chile y Perú
       </h2>
 
@@ -170,7 +194,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto1.webp"
+                src="imagenes/proyectos/galeria/proyecto1.webp"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -180,7 +204,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto2.webp"
+                src="imagenes/proyectos/galeria/proyecto2.webp"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -190,7 +214,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto3.webp"
+                src="imagenes/proyectos/galeria/proyecto3.webp"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -200,7 +224,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 4.jpg"
+                src="imagenes/proyectos/galeria/proyecto 4.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -210,7 +234,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 5.JPG"
+                src="imagenes/proyectos/galeria/proyecto 5.JPG"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -220,7 +244,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 6.jpg"
+                src="imagenes/proyectos/galeria/proyecto 6.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -230,7 +254,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 7.jpg"
+                src="imagenes/proyectos/galeria/proyecto 7.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -240,7 +264,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 8.jpg"
+                src="imagenes/proyectos/galeria/proyecto 8.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -250,7 +274,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 9.jpg"
+                src="imagenes/proyectos/galeria/proyecto 9.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -260,7 +284,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 10.jpg"
+                src="imagenes/proyectos/galeria/proyecto 10.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -270,7 +294,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 11.jpg"
+                src="imagenes/proyectos/galeria/proyecto 11.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -280,7 +304,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 12.jpg"
+                src="imagenes/proyectos/galeria/proyecto 12.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -290,7 +314,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 13.jpg"
+                src="imagenes/proyectos/galeria/proyecto 13.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -300,7 +324,7 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 14.jpg"
+                src="imagenes/proyectos/galeria/proyecto 14.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
@@ -310,14 +334,15 @@
           <div class="rounded-xl overflow-hidden shadow-lg">
             <div class="overflow-hidden">
               <img
-                src="imagenes/galeria/proyecto 15.jpg"
+                src="imagenes/proyectos/galeria/proyecto 15.jpg"
                 alt="Cocina moderna con gabinetes blancos y madera clara"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
             </div>
           </div>
-          
+          <!--  -->
         </div>
+      </div>
     </main>
 
     <!-- Botón flotante de WhatsApp -->
