@@ -81,7 +81,7 @@ body {
 .slider {
   margin-top: 8.5rem;
   width: 100vw;
-  aspect-ratio: 16 / 9; 
+  /* aspect-ratio: 16 / 9;  */
   max-height: 300px;    
   overflow: hidden;
   position: relative;
