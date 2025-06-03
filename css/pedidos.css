@@ -1,67 +1,14 @@
 /* ===============================
-   Fuente principal y margen top
+   Fuente principal y scroll
 ================================ */
 body {
   font-family: "Open Sans", sans-serif;
-  margin-top: 80px; /* Espacio superior para no tapar el logo */
+  overflow-x: hidden;
 }
 
 /* ===============================
-   Menú de navegación superior
+   Ocultar visualmente pero accesible
 ================================ */
-/* Menú fijo con transición */
-.navbar {
-  position: fixed;
-  top: 80px; /* Separación desde el top al cargar */
-  left: 0;
-  width: 100%;
-  background-color: #000000;
-  padding: 15px;
-  display: flex;
-  justify-content: flex-end;
-  z-index: 1000;
-  transition: top 0.3s ease; /* Transición suave al moverse */
-}
-.navbar a:hover {
-  /* background-color: #5e5959ad; */
-  color: #e45d1e; /* Color acento elegante */
-}
-
-.navbar.scrolled {
-  top: 0 !important; /* Se pega al borde superior al hacer scroll */
-}
-
-.navbar a {
-  color: white;
-  margin-right: 20px;
-  text-decoration: none;
-  font-size: 13px; /* Tamaño responsivo base */
-}
-
-/* ===============================
-   Logo flotante en la esquina
-================================ */
-.logo {
-  position: fixed;
-  top: 20px;
-  left: 0px;
-  z-index: 1001;
-  transition: top 0.3s ease; /* Transición suave */
-}
-
-/* Imagen del logo base */
-.logo-img {
-  width: 120px;
-  height: auto;
-  transition: all 0.3s ease;
-}
-
-/* Estilo del logo cuando haces scroll */
-.logo-img.scrolled {
-  width: 80px; /* Se reduce el tamaño */
-}
-
-/* Ocultar visualmente (para SEO y accesibilidad) */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -75,27 +22,86 @@ body {
 }
 
 /* ===============================
-   Slider principal (carrusel)
+   Menú de navegación superior
+================================ */
+.navbar {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  width: 100%;
+  background-color: #000;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.navbar a {
+  color: white;
+  margin-right: 1.25rem;
+  text-decoration: none;
+  font-size: 0.8125rem;
+}
+
+.navbar a:hover {
+  color: #e45d1e;
+}
+
+.navbar.scrolled {
+  top: 0 !important;
+}
+
+/* ===============================
+   Logo flotante
+================================ */
+.logo {
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  z-index: 1001;
+  transition: top 0.3s ease;
+}
+
+.logo-img {
+  width: 7.5rem;
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+.logo-img.scrolled {
+  width: 5rem;
+  margin-top: 2.125rem;
+}
+
+/* ===============================
+   Slider principal
 ================================ */
 .slider {
-  margin-top: 122px;
+  margin-top: 8.5rem; /* este espacio se asegura que quede debajo del logo y navbar */
   width: 100vw;
-  height: 30vh;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   position: relative;
   margin-bottom: 1rem;
+  height: 300px;
 }
 
 .slider-container {
+  height: 300px;
   display: flex;
-  height: 100%;
   transition: transform 0.5s ease;
+  width: calc(100vw * 3);
+  
 }
 
 .slider-container img {
   flex: 0 0 100vw;
-  height: 100%;
-  object-fit: contain;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  display: block;
 }
 
 /* ===============================
@@ -113,13 +119,12 @@ body {
 
 .slider-button {
   background-color: rgba(0, 0, 0, 0.603);
-  padding: 10px;
+  padding: 0.25rem;
   color: white;
   cursor: pointer;
-  font-size: 12px;
-  border-radius: 5px;
-  margin-left: 15px;
-  margin-right: 15px;
+  font-size: 1.5rem;
+  border-radius: 0.3125rem;
+  margin: 0 1rem;
   transition: outline 0.3s ease, background-color 0.3s ease;
 }
 
@@ -128,47 +133,23 @@ body {
   background-color: rgba(0, 0, 0, 0.295);
 }
 
-/* ===============================
-   Botón flotante dentro del slider
-================================ */
-.slider-button-float {
-  position: absolute;
-  bottom: 39%;
-  right: 50px;
-  transform: none;
-  padding: 12px 25px;
-  color: white;
-  background-color: #00000094;
-  border-radius: 8px;
-  white-space: nowrap;
-  font-weight: bold;
-  z-index: 10;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.slider-button-float:hover {
-  background-color: #4427017e;
-}
 
 /* ===============================
    Indicadores del slider
 ================================ */
 .slider-indicators {
-  margin-top: 2rem; /* Empújalo un poco hacia arriba */
-  position: relative; /* Ya no necesita 'absolute' */
+  position: absolute;
+  /* bottom: 52%; */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  justify-content: center;
   gap: 0.5rem;
-  z-index: 10;
+
 }
 
 .slider-indicators span {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
   background-color: rgba(82, 79, 79, 0.6);
   border-radius: 50%;
   cursor: pointer;
@@ -176,22 +157,7 @@ body {
 }
 
 .slider-indicators span.active {
-  background-color: #000000;
-}
-
-/* ===============================
-   Botón reutilizable
-================================ */
-.button-link {
-  background-color: #0000004b;
-  padding: 10px 20px;
-  text-decoration: none;
-  color: white;
-  border-radius: 5px;
-}
-
-.button-link:hover {
-  background-color: #5030023b;
+  background-color: #000;
 }
 
 /* ===============================
@@ -199,19 +165,19 @@ body {
 ================================ */
 .whatsapp-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.25rem;
+  right: 1.25rem;
   background-color: #25d366;
-  width: 60px;
-  height: 60px;
+  width: 3.75rem;
+  height: 3.75rem;
   border-radius: 50%;
   color: white;
-  font-size: 28px;
+  font-size: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
   z-index: 999;
 }
 
@@ -219,83 +185,3 @@ body {
   background-color: #128c7e;
 }
 
-/* ===============================
-   Estilos Responsivos
-================================ */
-
-/* Dispositivos móviles (hasta 414px) */
-@media (max-width: 414px) {
-  .navbar {
-    display: flex;
-    justify-content: flex-end; /* Alinea los elementos al lado derecho */
-    padding: 10px;
-  }
-
-  .navbar a {
-    font-size: 12px;
-    margin-right: 10px;
-  }
-
-  .logo-img {
-    width: 90px;
-  }
-
-  .logo-img.scrolled {
-    width: 60px;
-  }
-
-  .slider {
-    height: 40vh;
-  }
-  .slider img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  .slider-button-float {
-    bottom: 70px;
-    left: 50%;
-    transform: translateX(-10%);
-    padding: 8px 15px;
-    font-size: 14px;
-  }
-
-  .slider-button {
-    font-size: 11px;
-    padding: 10px;
-  }
-
-  .whatsapp-button {
-    width: 50px;
-    height: 50px;
-    font-size: 22px;
-  }
-}
-
-/*  iPad Mini / Galaxy Tab vertical (768px ancho) */
-@media (max-width: 768px) {
-  .slider {
-    height: 50vh;
-  }
-
-  .slider-container img {
-    height: 100%;
-  }
-
-  .navbar {
-    padding: 10px 20px;
-  }
-
-.slider-button-float {
-  position: absolute;
-  bottom: 70px;
-  right: 20px;
-  transform: none;
-  padding: 8px 25px; /* Más padding a los lados */
-  font-size: 14px;
-  white-space: nowrap; /* Para que no se quiebre el texto */
-  max-width: calc(100vw - 40px); /* Evita que el botón sobresalga en pantallas pequeñas */
-  box-sizing: border-box; /* Para que el padding cuente dentro del ancho */
-}
-
-}
