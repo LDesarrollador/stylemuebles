@@ -208,3 +208,31 @@ body {
   background-color: #128c7e;
 }
 
+@media screen and (max-width: 800px) {
+
+.navbar {
+  position: fixed;
+  top: 5rem;
+  right: 0; /* Cambiado de left: 0 a right: 0 */
+  height: auto; /* o 100% si la quieres de arriba abajo */
+  width: auto; /* auto para que se ajuste al contenido */
+  background-color: #000;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; /* Para que los enlaces estén uno debajo del otro */
+  align-items: flex-end; /* Alinea a la derecha */
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+.navbar a {
+  color: white;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  font-size: 0.8125rem;
+}
+
+.navbar a:hover {
+  color: #e45d1e;
+}
+
+}
