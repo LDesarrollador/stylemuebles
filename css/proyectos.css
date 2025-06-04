@@ -81,7 +81,7 @@ body {
 .slider {
   margin-top: 8.5rem;
   width: 100vw;
-  /* aspect-ratio: 16 / 9;  */
+  aspect-ratio: auto; 
   max-height: 300px;    
   overflow: hidden;
   position: relative;
@@ -100,6 +100,31 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+/* slider texto */
+.slider-text-overlay {
+  position: absolute;
+  top: 1.5rem;
+  left: 2.5rem;
+  color: white;
+  z-index: 10;
+  max-width: 80%;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slider-heading {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.slider-subtext {
+  display: inline-block;
+  background-color: rgba(235, 92, 9, 0.65);
+  padding: 0.5rem 1rem;
+  /* border-radius: 0.5rem; */
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 /* ===============================

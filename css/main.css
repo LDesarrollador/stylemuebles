@@ -79,11 +79,16 @@ body {
    Slider principal
 ================================ */
 .slider {
-  margin-top: 6rem;
+  flex: 0 0 100vw;
   width: 100vw;
-  aspect-ratio: 16 / 9; 
-  max-height: 500px;    
+  /* height: 100%; */
+  position: relative; /* Necesario para posicionar los textos sobre la imagen */
   overflow: hidden;
+
+  margin-top: 8.50rem;
+  /* width: 100vw; */
+  aspect-ratio: auto;
+  height: clamp(250px, 40vh, 400px);
   position: relative;
   margin-bottom: 1rem;
 }
@@ -92,14 +97,41 @@ body {
   display: flex;
   transition: transform 0.5s ease;
   width: calc(100vw * 3);
+  height: 100%; 
 }
 
 .slider-container img {
   flex: 0 0 100vw;
   width: 100vw;
-  height: 100%;
+  height: 100%; 
   object-fit: cover;
   display: block;
+}
+
+/* slider texto */
+.slider-text-overlay {
+  position: absolute;
+  top: 1.5rem;
+  left: 2.5rem;
+  color: white;
+  z-index: 10;
+  max-width: 80%;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.slider-heading {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+}
+
+.slider-subtext {
+  display: inline-block;
+  background-color: rgba(235, 92, 9, 0.65);
+  padding: 0.5rem 1rem;
+  /* border-radius: 0.5rem; */
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 /* ===============================
@@ -117,10 +149,10 @@ body {
 
 .slider-button {
   background-color: rgba(0, 0, 0, 0.603);
-  padding: 0.625rem;
+  padding: 0.450rem;
   color: white;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   border-radius: 0.3125rem;
   margin: 0 1rem;
   transition: outline 0.3s ease, background-color 0.3s ease;
@@ -213,5 +245,16 @@ body {
     font-size: 0.875rem;
     gap: 0.25rem;
   }
+.slider-button {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 0.4rem;               /* antes: 0.625rem */
+  font-size: 1rem;               /* antes: 1.5rem */
+  border-radius: 0.25rem;        /* opcional, un poco más redondo */
+  color: white;
+  cursor: pointer;
+  margin: 0 0.75rem;             /* opcional: reducir separación horizontal */
+  transition: outline 0.3s ease, background-color 0.3s ease;
+}
 
 }
+

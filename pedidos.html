@@ -109,18 +109,52 @@
       <!-- Slider de imágenes de pedidos -->
       <div class="slider">
         <div class="slider-container" id="slider-container">
-          <img
-            src="imagenes/slide/bannerpedidos1.gif"
-            alt="Pedido de cocina moderna con acabado en madera"
-          />
-          <img
-            src="imagenes/slide/bannerpedidos2.gif"
-            alt="Pedido de cocina con isla central y diseño minimalista"
-          />
-          <img
-            src="imagenes/slide/bannerpedidos3.gif"
-            alt="Pedido de muebles de cocina con acabados naturales"
-          />
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/pedidos/slider/pedidosmobile4.png"
+            />
+            <img
+              src="imagenes/pedidos/slider/bannerpedidosweb1.gif"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/pedidos/slider/pedidosmobile5.png"
+            />
+            <img
+              src="imagenes/pedidos/slider/bannerpedidosweb2.gif"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/pedidos/slider/pedidosmobile6.png"
+            />
+            <img
+              src="imagenes/pedidos/slider/bannerpedidosweb3.gif"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <div class="slider-text-overlay">
+          <h2 class="slider-heading">Escríbenos...</h2>
+          <a
+            href="https://wa.me/1234567890"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="slider-subtext"
+          >
+            Cotizar ahora
+          </a>
         </div>
 
         <!-- Controles de navegación del slider -->
@@ -216,7 +250,7 @@
       <!-- Galería de pedidos anteriores -->
       <div class="mt-4 px-2 max-w-6xl mx-auto mb-10">
         <h3 class="text-center text-lg font-semibold mb-6">
-          Algunos de nuestros pedidos
+          Siguenos en nuestras redes oficiales
         </h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div class="rounded-xl overflow-hidden shadow-lg">
