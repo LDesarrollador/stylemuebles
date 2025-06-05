@@ -113,7 +113,7 @@ body {
   position: absolute;
   top: 1.5rem;
   left: 2.5rem;
-  color: white;
+  color: rgb(255, 255, 255);
   z-index: 10;
   max-width: 80%;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
@@ -127,11 +127,12 @@ body {
 
 .slider-subtext {
   display: inline-block;
-  background-color: rgba(235, 92, 9, 0.65);
+  background-color: rgba(236, 98, 18, 0.801);
   padding: 0.5rem 1rem;
-  /* border-radius: 0.5rem; */
   font-weight: 700;
   font-size: 1rem;
+  color: #ffffff; /* Verde brillante estilo WhatsApp */
+  text-decoration: none;
 }
 
 /* ===============================
@@ -237,6 +238,39 @@ body {
 .whatsapp-button:hover {
   background-color: #128c7e;
 }
+
+/* Boton deslizante */
+.scroll-to-top {
+  position: fixed;
+  bottom: 5rem;
+  right: 1.25rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #000;
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  z-index: 999;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.scroll-to-top:hover {
+  background-color: #e45d1e;
+}
+
+/* Mobiles */
 
 @media screen and (max-width: 500px) {
   .slider-text-overlay{

@@ -134,3 +134,34 @@ window.addEventListener("scroll", function () {
     logoImg.classList.remove("scrolled");
   }
 });
+// Para el boton deslizante
+const scrollBtn = document.getElementById("scrollToTopBtn");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 300) {
+    scrollBtn.classList.add("show");
+  } else {
+    scrollBtn.classList.remove("show");
+  }
+});
+
+scrollBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+// script de modal
+function mostrarModal(ruta) {
+  const modal = document.getElementById("modalImagen");
+  const img = document.getElementById("imagenModal");
+  img.src = ruta;
+  modal.classList.remove("hidden");
+}
+
+function cerrarModal(e) {
+  if (e) e.stopPropagation(); // Evita cerrar si clic en imagen
+  document.getElementById("modalImagen").classList.add("hidden");
+}
