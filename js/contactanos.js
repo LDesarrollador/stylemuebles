@@ -207,7 +207,7 @@ function initMiniChat() {
     },
     _0x25f0dd = _0x11aed5[_0x4d862b],
     _0x154783 =
-      "Hola!\x20Estoy\x20interesado/a\x20en\x20recibir\x20una\x20cotización\x20para\x20un\x20mueble\x20personalizado.\x20¿Me\x20puedes\x20ayudar?",
+      "Hola!\x20Vengo\x20de\x20su\x20página\x20web\x20y\x20estoy\x20interesado/a\x20en\x20recibir\x20una\x20cotización\x20para\x20un\x20mueble\x20personalizado.\x20¿Me\x20puedes\x20ayudar?",
     _0x22c7a6 = encodeURIComponent(_0x154783);
   let _0x3dfa8c = ![];
   _0x2ff06c[_0x3e8136(0x22f)](_0x3e8136(0x1eb), () => {

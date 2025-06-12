@@ -196,7 +196,7 @@ document[_0x270ef5(0x1f3)](_0x270ef5(0x1d4), function () {
   function _0x26692b(_0x59102c) {
     const _0x2d9282 = _0xa57786,
       _0x287d1e =
-        "Hola,\x20me\x20encantaría\x20cotizar\x20un\x20proyecto\x20con\x20ustedes\x20😄",
+        "Hola,\x20vi\x20su\x20sitio\x20web\x20y\x20me\x20encantaría\x20cotizar\x20un\x20proyecto\x20con\x20ustedes\x20😄",
       _0x467663 = encodeURIComponent(_0x287d1e);
     (_0x2ccff4["href"] = _0x2d9282(0x1f0) + _0x2baf31 + "?text=" + _0x467663),
       (_0x2ccff4[_0x2d9282(0x1e6)] = _0x2d9282(0x1e2) + _0x59102c);
