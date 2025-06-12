@@ -5,36 +5,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Título de la página, importante para el SEO y la pestaña del navegador -->
+    <!-- Título de la página, SEO-->
     <title>
-      Diseño y Fabricación de Cocinas y Muebles a Medida en Chile y Perú | STYLE
+      Cocinas y Muebles a Medida en Melamina | Diseño y Fabricación en Chile y
+      Perú | STYLE Muebles
     </title>
+
     <!-- Ícono de pestaña -->
     <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
     <!-- Meta descripción: proporciona un resumen breve y atractivo de la página para motores de búsqueda -->
     <meta
       name="description"
-      content="Diseñamos y fabricamos cocinas y muebles a medida en melamina. En STYLE creamos espacios modernos y funcionales en Santiago de Chile, Valparaíso, todo Chile y Perú. Cotiza con nuestros expertos y transforma tu hogar con muebles personalizados de alta calidad."
+      content="En STYLE Muebles diseñamos y fabricamos cocinas y muebles a medida en melamina para todo Chile y Perú. Creamos espacios modernos, funcionales y de alta calidad desde Santiago. ¡Cotiza y transforma tu hogar con expertos!"
     />
 
-    <!-- Palabras clave SEO: ayudan a los motores de búsqueda a entender de qué trata la página -->
+    <!-- SEO-->
     <meta
       name="keywords"
-      content="cocinas a medida, muebles en melamina, muebles personalizados, cocinas en Chile, cocinas en santiago de chile, cocinas en Antofagasta, cocinas en Perú, diseño de cocinas, closets a medida, muebles modernos"
+      content="muebles a medida, cocinas en melamina, closets personalizados, diseño de cocinas, muebles modernos en Chile, muebles para el hogar, muebles en Santiago, cocinas personalizadas, muebles en Perú, muebles funcionales"
     />
 
-    <!-- Información sobre el autor de la página -->
+    <!-- Información sobre el autor de la página | Luis Rodriguez, elevumlab-->
     <meta name="author" content="STYLE Muebles a Medida" />
 
-    <!-- Open Graph: metadatos para compartir en redes sociales (Facebook, WhatsApp, etc.) -->
+    <!-- Open Graph: metadatos RS-->
     <meta
       property="og:title"
-      content="Cocinas y Muebles a Medida en Chile y Perú | STYLE"
+      content="Muebles y Cocinas a Medida en Melamina | STYLE Muebles en Chile y Perú"
     />
+
     <meta
       property="og:description"
-      content="Especialistas en diseño y fabricación de cocinas y muebles en melamina. Calidad y funcionalidad para tu hogar en todo Chile y Perú."
+      content="Diseñamos y fabricamos muebles a medida con melamina de alta calidad. Servicio en todo Chile y Perú. Tu hogar, tu estilo."
     />
+
     <meta
       property="og:image"
       content="https://stylemuebles.com/imagenes/og-image.jpg"
@@ -42,7 +46,7 @@
     <meta property="og:url" content="https://stylemuebles.com" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card: metadatos para compartir en Twitter -->
+    <!-- metadatos para compartir -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -57,22 +61,22 @@
       content="https://stylemuebles.com/imagenes/og-image.jpg"
     />
 
-    <!-- Enlace a la tipografía de Google Fonts -->
+    <!-- tipografía de Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
 
-    <!-- Enlace al archivo de Tailwind CSS, un framework de diseño que te permite usar clases predefinidas para facilitar el diseño -->
+    <!-- Tailwind CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
       rel="stylesheet"
     />
 
-    <!-- Enlace a tus estilos CSS personalizados -->
+    <!-- CSS personalizados -->
     <link href="css/main.css" rel="stylesheet" />
 
-    <!-- Enlace a los iconos de FontAwesome para incluir iconos en tu página -->
+    <!-- FontAwesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -81,84 +85,102 @@
 
   <body>
     <header>
-      <!-- Logo superior izquierdo -->
+      <!-- Logo superior izquierdo "S" -->
       <div class="logo">
         <img
-          src="imagenes/logo-grande.jpg"
+          src="imagenes/logo-grande.png"
           alt="Logo de STYLE, Muebles a Medida"
           class="logo-img"
           id="logo"
         />
+        <!-- Logo superior izquierdo "STYLE" -->
+        <img
+          src="imagenes/logosuperior.png"
+          alt="Logo con letras de STYLE Muebles a Medida"
+          class="h-10 w-auto sm:block logo-texto"
+        />
+        <!-- Logo en texto "Muebles" -->
+        <!-- class="h-10 w-auto hidden sm:block logo-texto" -- el hidden oculta en mobil -->
+        <span class="logo-muebles">Muebles</span>
       </div>
 
       <!-- Menú de navegación principal -->
-      <nav class="navbar" role="navigation" aria-label="Menú principal">
-        <ul class="flex space-x-4">
-          <li><a href="index.html">Inicio</a></li>
+
+      <nav
+        class="navbar flex items-center justify-between relative px-4"
+        role="navigation"
+        aria-label="Menú principal"
+      >
+        <!-- Botón hamburguesa -->
+        <button
+          id="menu-toggle"
+          class="sm:hidden text-white p-2"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <!-- Menú-->
+        <ul
+          id="menu-list"
+          class="absolute top-full right-0 text-right w-full bg-black bg-opacity-80 text-white opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4 px-4 py-3 sm:static sm:flex sm:opacity-100 sm:pointer-events-auto sm:translate-y-0 sm:space-x-6 sm:space-y-0 sm:bg-transparent sm:text-black sm:justify-end sm:items-center sm:px-0 sm:py-0"
+        >
+          <li>
+            <a href="index.html" class="font-bold text-yellow-500">Inicio</a>
+          </li>
+          <li><a href="quienessomos.html">Quiénes somos</a></li>
           <li><a href="proyectos.html">Proyectos</a></li>
-          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="contactanos.html">Contáctanos</a></li>
         </ul>
       </nav>
     </header>
-
+    <!-- -->
     <main class="pb-22">
-      <h1 class="visually-hidden">STYLE Muebles a Medida</h1>
+      <!-- Titulo SEO -->
+      <h1 class="visually-hidden">
+        Muebles a medida en melamina fabricados por STYLE Muebles en Chile y
+        Perú
+      </h1>
+      <!-- Slider -->
       <div class="slider">
         <!-- Contenedor de imágenes del slider -->
         <div class="slider-container" id="slider-container">
+          <!-- imagen 1 -->
           <img
             src="imagenes/slide/slideimg1.png"
             loading="lazy"
-            alt="Cocina moderna con acabado en madera y detalles en acero inoxidable"
+            alt="Cocina moderna a medida en melamina con acabado tipo madera y detalles en acero, fabricada por Style Muebles en Chile"
           />
-
+          <!-- imagen 2 -->
           <img
             src="imagenes/slide/slideimg2.png"
             loading="lazy"
-            alt="Cocina con isla central y diseño minimalista"
+            alt="Diseño de cocina minimalista con isla central, hecha a medida en melamina por Style Muebles para clientes en Perú"
           />
+          <!-- imagen 3 -->
           <img
             src="imagenes/slide/slideimg3.png"
             loading="lazy"
-            alt="Muebles de cocina con acabados en madera natural"
+            alt="Muebles de cocina personalizados con acabado en madera natural, diseñados a medida por Style Muebles para hogares en Chile"
           />
-          <!-- <img
-            src="imagenes/slide/slide4.webp"
-            loading="lazy"
-            alt="Cocina estilo contemporáneo con acabados de lujo"
-          />
-          <img
-            src="imagenes/slide/slide5.webp"
-            loading="lazy"
-            alt="Muebles de baño modernos con detalles en vidrio"
-          />
-          <img
-            src="imagenes/slide/slide6.webp"
-            loading="lazy"
-            alt="Mueble de cocina con colores cálidos y diseño funcional"
-          />
-          <img
-            src="imagenes/slide/slide7.webp"
-            loading="lazy"
-            alt="Cocina rústica con detalles en madera y piedra"
-          />
-          <img
-            src="imagenes/slide/slide8.webp"
-            loading="lazy"
-            alt="Cocina con iluminación LED y detalles de acero inoxidable"
-          />
-          <img
-            src="imagenes/slide/slide9.webp"
-            loading="lazy"
-            alt="Cocina minimalista con diseño abierto y armarios blancos"
-          /> -->
         </div>
+        <!---->
         <div class="slider-text-overlay">
+          <!-- texto slide -->
           <h2 class="slider-heading">Cocina con estilo</h2>
-          <div class="slider-subtext">Hasta 10% de descuento</div>
+          <!-- Oferta en slide -->
+          <a
+            href="https://wa.me/56951858928?text=¡Hola!%20Descubrí%20en%20su%20web,%20un%2010%%20de%20descuento%20y%20quiero%20aprovecharlo."
+            class="slider-subtext"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hasta 10% de descuento
+          </a>
         </div>
 
-        <!-- Flechas de control del slider -->
+        <!-- Flechas de control-->
         <div class="slider-controls">
           <div
             class="slider-button"
@@ -179,70 +201,161 @@
             &#10095;
           </div>
         </div>
-        <!-- Botón flotante dentro del slider -->
+        <!-- Botón flotante -->
         <a href="proyectos.html" class="slider-button-float">Ver Proyectos →</a>
       </div>
-      <!-- Indicadores del slider -->
+      <!-- Dots -->
       <div class="slider-indicators" id="slider-indicators"></div>
 
-      <!-- TÍTULO SEO -->
+      <!-- SEO -->
       <h2 class="text-center mt-10 text-2xl font-bold text-gray-800">
-        Muebles en melamina a medida en todo Chile y Perú
+        Muebles a medida en melamina: calidad para tu hogar u oficina en Chile y
+        Perú
       </h2>
 
       <!-- Frase de presentación -->
-      <div class="text-center mt-0">
-        <p>
-          Especialistas en diseño y fabricación de muebles a medida con acabados
-          de alta calidad.
+      <div class="text-center mt-2">
+        <p class="text-gray-700">
+          Diseñamos y fabricamos muebles personalizados con acabados duraderos,
+          perfectos para cocinas, oficinas, closets y más.
         </p>
       </div>
 
-      <!-- Galería de proyectos 3 imagenes -->
+      <!-- Galería de proyectos -->
       <div class="mt-3 px-2 max-w-6xl mx-auto mb-16">
         <h3 class="text-center text-lg font-semibold mb-6">
-          Proyectos recientes
+          Muebles modernos y funcionales en melamina: proyectos recientes de
+          Style Muebles en todo Chile
         </h3>
+        <!-- -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <!-- Imagen 1 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transition-all duration-700 opacity-0 translate-y-8 project-img"
+          >
             <div class="overflow-hidden">
               <img
                 src="imagenes/recientes/proyecto1.webp"
-                alt="Proyecto de cocina moderna"
-                class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
+                loading="lazy"
+                alt="Cocina moderna a medida en melamina, diseño exclusivo realizado por Style Muebles para un cliente en Santiago, Chile"
+                class="modal-trigger w-full h-64 object-cover transform transition duration-500 hover:scale-110"
+                data-index="0"
               />
             </div>
           </div>
 
           <!-- Imagen 2 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transition-all duration-700 opacity-0 translate-y-8 project-img"
+          >
             <div class="overflow-hidden">
               <img
                 src="imagenes/recientes/proyecto2.webp"
-                alt="Proyecto de mueble de baño personalizado"
-                class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
+                loading="lazy"
+                alt="Mueble de baño personalizado en melamina, fabricado por Style Muebles con diseño funcional para espacios pequeños en Perú"
+                class="modal-trigger w-full h-64 object-cover transform transition duration-500 hover:scale-110"
+                data-index="1"
               />
             </div>
           </div>
 
           <!-- Imagen 3 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transition-all duration-700 opacity-0 translate-y-8 project-img"
+          >
             <div class="overflow-hidden">
               <img
                 src="imagenes/recientes/proyecto3.webp"
-                alt="Cocina en melamina blanca y madera"
+                loading="lazy"
+                alt="Cocina blanca con detalles en madera, diseño a medida en melamina creado por Style Muebles para cliente en Región Metropolitana"
+                class="modal-trigger w-full h-64 object-cover transform transition duration-500 hover:scale-110"
+                data-index="2"
+              />
+            </div>
+          </div>
+          <!-- Fin de imagen 3ra-->
+        </div>
+        <!-- -->
+        <!-- -->
+        <div class="text-center mt-8">
+          <button
+            id="ver-mas-proyectos"
+            class="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition"
+          >
+            Ver más proyectos...
+          </button>
+        </div>
+
+        <!-- Contenedor oculto-->
+        <div
+          id="proyectos-adicionales"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8 hidden"
+        >
+          <!-- Imagen 4 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transition-all duration-700 opacity-0 translate-y-8 project-img"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="imagenes/recientes/proyecto4.jpg"
+                loading="lazy"
+                data-index="3"
+                alt="Closet moderno de melamina fabricado por Style Muebles en Viña del Mar, diseño personalizado"
                 class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
               />
             </div>
           </div>
+
+          <!-- Imagen 5 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transition-all duration-700 opacity-0 translate-y-8 project-img"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="imagenes/recientes/proyecto5.jpg"
+                loading="lazy"
+                data-index="4"
+                alt="Mueble de TV flotante moderno hecho a medida por Style Muebles en melamina blanca"
+                class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
+              />
+            </div>
+          </div>
+
+          <!-- Imagen 6 -->
+          <div
+            class="rounded-xl overflow-hidden shadow-lg transition-all duration-700 opacity-0 translate-y-8 project-img"
+          >
+            <div class="overflow-hidden">
+              <img
+                src="imagenes/recientes/proyecto6.jpg"
+                loading="lazy"
+                data-index="5"
+                alt="Cocina con isla central fabricada en melamina y cubierta de cuarzo por Style Muebles"
+                class="w-full h-64 object-cover transform transition duration-500 hover:scale-110"
+              />
+            </div>
+            <!--  -->
+          </div>
+          <!--  -->
         </div>
+
+        <!-- Botón oculto: Ver galería completa -->
+        <div id="btn-ver-galeria" class="text-center mt-6 hidden">
+          <a
+            href="proyectos.html"
+            class="inline-block bg-white border border-black text-black px-6 py-3 rounded-full font-semibold hover:bg-black hover:text-white transition"
+          >
+            → Ver galería de proyectos
+          </a>
+        </div>
+        <!--  -->
       </div>
+      <!--  -->
     </main>
 
     <!-- Botón flotante de WhatsApp -->
     <a
-      href="https://wa.me/1234567890"
+      href="https://wa.me/56951858928?text=Hola%2C%20estuve%20revisando%20su%20web%20y%20estoy%20interesado%20en%20cotizar%20un%20mueble%20a%20medida.%20%C2%BFPodemos%20empezar%20mi%20dise%C3%B1o%3F"
       class="whatsapp-button"
       target="_blank"
       rel="noopener noreferrer"
@@ -250,9 +363,10 @@
     >
       <i class="fab fa-whatsapp"></i>
     </a>
-    <!-- Footer: pie de página -->
+
+    <!-- Footer -->
     <footer class="footer text-center py-4 bg-gray-100 text-gray-800">
-      <p>&copy; 2025 STYLE Muebles. Todos los derechos reservados.</p>
+      <p>&copy; 2025 Grupo STYLE Limitada. Todos los derechos reservados.</p>
     </footer>
     <!-- boton deslizante -->
     <a
@@ -263,7 +377,59 @@
     >
       ↑
     </a>
+    <!-- Chat WhatsApp personalizado -->
+    <div id="whatsapp-mini-chat" class="mini-chat hide">
+      <a
+        id="whatsapp-chat-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        👋 Cargando mensaje...
+      </a>
+    </div>
+
+    <!--  -->
     <!-- Script personalizado -->
     <script src="js/main.js"></script>
+    <!-- Contenedor del modal -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 hidden"
+    >
+      <!-- Botón para cerrar el modal -->
+      <button
+        id="modalClose"
+        class="absolute top-5 right-5 text-white text-3xl font-bold"
+      >
+        &times;
+        <!-- Símbolo de "X"  -->
+      </button>
+
+      <!-- Imagen ampliada  -->
+      <img
+        id="modalImage"
+        src=""
+        alt="Imagen ampliada"
+        class="max-w-full max-h-[90vh] rounded shadow-lg transition-transform duration-300 scale-100"
+      />
+
+      <!-- Botón prev -->
+      <button
+        id="prevBtn"
+        class="absolute left-5 text-white text-3xl font-bold"
+      >
+        &#10094;
+        <!-- Símbolo de flecha  -->
+      </button>
+
+      <!-- Botón next -->
+      <button
+        id="nextBtn"
+        class="absolute right-5 text-white text-3xl font-bold"
+      >
+        &#10095;
+      </button>
+    </div>
   </body>
 </html>

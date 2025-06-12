@@ -21,6 +21,7 @@ body {
   border: 0;
 }
 
+
 /* ===============================
    Menú de navegación superior
 ================================ */
@@ -36,6 +37,7 @@ body {
   justify-content: flex-end;
   z-index: 1000;
   transition: top 0.3s ease;
+  height: 3.7rem;
 }
 
 .navbar a {
@@ -46,7 +48,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #e45d1e;
+  color: #ed3e13;
 }
 
 .navbar.scrolled {
@@ -57,6 +59,9 @@ body {
    Logo flotante
 ================================ */
 .logo {
+  display: flex;
+align-items: center;
+gap: 0.5rem;
   position: fixed;
   top: 1.25rem;
   left: 0;
@@ -69,10 +74,28 @@ body {
   height: auto;
   transition: all 0.3s ease;
 }
+/* para el png de style texto */
+.logo-texto {
+  margin-top: -2.5rem; 
+}
+.logo-texto.oculto {
+  display: none;
+}
 
-.logo-img.scrolled {
-  width: 5rem;
-  margin-top: 2.125rem;
+/* para el texto "Muebles"*/
+.logo-muebles {
+  color: black;
+  font-weight: 600;
+  margin-top: -1.5rem;
+  font-size: 2rem;
+  user-select: none;
+  transition: opacity 0.3s ease;
+  opacity: 1; /* valor por defecto */
+}
+
+.logo-muebles.scrolled {
+  opacity: 0;
+  pointer-events: none; 
 }
 
 /* ===============================
@@ -124,7 +147,7 @@ body {
   padding: 0.5rem 1rem;
   font-weight: 700;
   font-size: 1rem;
-  color: #ffffff; /* Verde brillante estilo WhatsApp */
+  color: #ffffff; 
   text-decoration: none;
 }
 
@@ -193,7 +216,7 @@ body {
 }
 
 .social-icons a {
-  background-color: #000; /* o cualquier color que combine */
+  background-color: #000; 
   color: #fff;
   width: 40px;
   height: 40px;
@@ -235,11 +258,13 @@ body {
 .whatsapp-button:hover {
   background-color: #128c7e;
 }
+
 /* Boton deslizante */
 .scroll-to-top {
   position: fixed;
-  bottom: 5rem;
-  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem; 
+  right: auto;   
   width: 3rem;
   height: 3rem;
   background-color: #000;
@@ -266,22 +291,98 @@ body {
   background-color: #e45d1e;
 }
 
+/* minichat  */
+.mini-chat {
+  position: fixed;
+  bottom: 6rem;
+  right: 1.25rem;
+  background-color: #25d366;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 260px;
+  width: auto;
+  line-height: 1.4;
+  white-space: normal;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  visibility: hidden;
+}
+
+/* Burbuja tipo triángulo */
+.mini-chat::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: #25d366 transparent transparent transparent;
+}
+
+/* Animación de entrada */
+.mini-chat.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Animación de salida */
+.mini-chat.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
 /* Mobiles */
 @media screen and (max-width: 800px) {
 .slider-text-overlay{
 color: #ffffff;
 }
+/* logos */
+
+.logo-img {
+    margin-top: 2rem;
+    width: 5.5rem;
+  }
+.logo-img.scrolled{
+  width: 4.5rem;
+  margin-top: 0rem;
+}
+/* Del img Style */
+.logo-texto{
+  margin-top: -1.5rem;
+  margin-left: -2.9rem;
+  transform: scale(0.6);
+  /* transform-origin: left; */
+  
+}
+/* del texto "Muebles" */
+.logo-muebles {
+  /* color: rgb(255, 255, 255); */
+    margin-left: -2.9rem;
+    margin-top: -1.099rem;
+    font-size: 1.5rem
+  }
+
+/* menu */
 .navbar {
   position: fixed;
   top: 5rem;
-  right: 0; /* Cambiado de left: 0 a right: 0 */
-  height: auto; /* o 100% si la quieres de arriba abajo */
-  width: auto; /* auto para que se ajuste al contenido */
+  right: 0;
+  height: 3.6rem; 
+  width: auto; 
   background-color: #000;
   padding: 1rem;
   display: flex;
-  flex-direction: column; /* Para que los enlaces estén uno debajo del otro */
-  align-items: flex-end; /* Alinea a la derecha */
+  flex-direction: column; 
+  align-items: flex-end;
   z-index: 1000;
   transition: top 0.3s ease;
 }
@@ -293,9 +394,11 @@ color: #ffffff;
 }
 
 .navbar a:hover {
-  color: #e45d1e;
+  color: #ed3e13;
 }
-
+/* footer */
+.footer {
+    font-size: 0.75rem; 
+    padding-bottom: 5rem;
+  }
 }
-
-

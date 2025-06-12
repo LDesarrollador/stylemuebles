@@ -1,167 +1,517 @@
-// ==============================
-// Variables y configuración inicial
-// ==============================
-
-// Índice actual del slide
-let currentIndex = 0;
-
-// Contenedor del carrusel
-const sliderContainer = document.getElementById("slider-container");
-
-// Todas las imágenes del slider
-const slides = document.querySelectorAll("#slider-container img");
-
-// Total de slides, constante porque no cambia durante la ejecución
-const totalSlides = slides.length;
-
-// Contenedor de indicadores (usa ID para evitar duplicidad)
-const indicatorContainer = document.getElementById("slider-indicators");
-
-// Ajusta el ancho del contenedor dinámicamente basado en la cantidad de imágenes
-sliderContainer.style.width = `${totalSlides * 100}vw`;
-
-// ==============================
-// Función principal para mostrar un slide específico
-// ==============================
-function showSlide(index) {
-  // Ajusta el índice para que no se salga de rango
-  if (index >= totalSlides) {
-    currentIndex = 0; // vuelve al primer slide
-  } else if (index < 0) {
-    currentIndex = totalSlides - 1; // va al último slide
-  } else {
-    currentIndex = index;
+const _0x471cd7 = _0x3375;
+(function (_0x13bb92, _0x77bba0) {
+  const _0x2252b2 = _0x3375,
+    _0x247970 = _0x13bb92();
+  while (!![]) {
+    try {
+      const _0xc47102 =
+        (parseInt(_0x2252b2(0xd5)) / 0x1) * (parseInt(_0x2252b2(0x118)) / 0x2) +
+        -parseInt(_0x2252b2(0xdb)) / 0x3 +
+        (-parseInt(_0x2252b2(0x10d)) / 0x4) *
+          (parseInt(_0x2252b2(0xf6)) / 0x5) +
+        parseInt(_0x2252b2(0xbb)) / 0x6 +
+        (parseInt(_0x2252b2(0xaf)) / 0x7) * (-parseInt(_0x2252b2(0xf9)) / 0x8) +
+        (-parseInt(_0x2252b2(0xfa)) / 0x9) *
+          (-parseInt(_0x2252b2(0x113)) / 0xa) +
+        -parseInt(_0x2252b2(0xc5)) / 0xb;
+      if (_0xc47102 === _0x77bba0) break;
+      else _0x247970["push"](_0x247970["shift"]());
+    } catch (_0x30f8ba) {
+      _0x247970["push"](_0x247970["shift"]());
+    }
   }
-
-  // Mueve el contenedor usando transform para mostrar el slide correcto
-  sliderContainer.style.transform = `translateX(-${currentIndex * 100}vw)`;
-
-  // Actualiza los indicadores para reflejar el slide activo
-  updateIndicators();
+})(_0x1e45, 0x58dc6);
+function handleScrollEffects() {
+  const _0x324f7e = _0x3375,
+    _0x4906aa = document["querySelector"](_0x324f7e(0xec)),
+    _0x1dbe2c =
+      document["getElementById"](_0x324f7e(0xd9)) ||
+      document[_0x324f7e(0xf3)](".logo-img"),
+    _0x4c2b2 = document[_0x324f7e(0xf3)](_0x324f7e(0xe5)),
+    _0x5b4d74 = document[_0x324f7e(0xf3)](".logo-muebles");
+  if (!_0x4906aa || !_0x1dbe2c) return;
+  window[_0x324f7e(0xd7)] > 0x14
+    ? (_0x4906aa[_0x324f7e(0xcc)][_0x324f7e(0xdd)]("scrolled"),
+      _0x1dbe2c[_0x324f7e(0xcc)][_0x324f7e(0xdd)](_0x324f7e(0xe2)),
+      _0x4c2b2?.[_0x324f7e(0xcc)]["add"]("oculto"),
+      _0x5b4d74?.[_0x324f7e(0xcc)][_0x324f7e(0xdd)]("scrolled"))
+    : (_0x4906aa["classList"][_0x324f7e(0x106)]("scrolled"),
+      _0x1dbe2c[_0x324f7e(0xcc)]["remove"]("scrolled"),
+      _0x4c2b2?.[_0x324f7e(0xcc)]["remove"]("oculto"),
+      _0x5b4d74?.[_0x324f7e(0xcc)][_0x324f7e(0x106)](_0x324f7e(0xe2)));
 }
-
-// ==============================
-// Controles manuales del slider
-// ==============================
-function nextSlide() {
-  showSlide(currentIndex + 1);
+function _0x3375(_0x2dac92, _0x4fd54c) {
+  const _0x1e45cf = _0x1e45();
+  return (
+    (_0x3375 = function (_0x3375ca, _0x30432a) {
+      _0x3375ca = _0x3375ca - 0xaf;
+      let _0x51cf2c = _0x1e45cf[_0x3375ca];
+      return _0x51cf2c;
+    }),
+    _0x3375(_0x2dac92, _0x4fd54c)
+  );
 }
-
-function prevSlide() {
-  showSlide(currentIndex - 1);
+function initScrollAnimation() {
+  const _0x29df0c = _0x3375;
+  window[_0x29df0c(0x10c)]("scroll", handleScrollEffects);
 }
-
-// ==============================
-// Control automático del slider
-// ==============================
-
-// Avanza automáticamente cada 5 segundos
-let slideInterval = setInterval(nextSlide, 5000);
-
-// Detiene el avance automático cuando el usuario pasa el mouse sobre el slider
-const slider = document.querySelector(".slider");
-
-slider.addEventListener("mouseenter", () => clearInterval(slideInterval));
-slider.addEventListener("mouseleave", () => {
-  slideInterval = setInterval(nextSlide, 5000);
-});
-
-// ==============================
-// Animación del botón al hacer clic
-// ==============================
-
-document.querySelectorAll(".slider-button").forEach((button) => {
-  button.addEventListener("click", () => {
-    button.classList.add("clicked");
-
-    // Remueve la clase 'clicked' después de 500ms para efecto visual
-    setTimeout(() => {
-      button.classList.remove("clicked");
-    }, 500);
-  });
-});
-
-// ==============================
-// Inicialización al cargar la página
-// ==============================
-
-// Mostrar el primer slide al iniciar
-showSlide(currentIndex);
-
-// ==============================
-// Indicadores de navegación
-// ==============================
-
-// Crea un punto por cada imagen del slider y agrega evento para cambiar slide al hacer clic
-slides.forEach((_, i) => {
-  const dot = document.createElement("span");
-  dot.addEventListener("click", () => showSlide(i));
-  indicatorContainer.appendChild(dot);
-});
-
-// ==============================
-// Función para actualizar los indicadores activos
-// ==============================
-function updateIndicators() {
-  const dots = indicatorContainer.querySelectorAll("span");
-  dots.forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentIndex);
+function initHamburgerMenu() {
+  const _0xafcf47 = _0x3375,
+    _0x4c3bf5 = document["getElementById"](_0xafcf47(0x116)),
+    _0x194be8 = document[_0xafcf47(0x11d)](_0xafcf47(0xb2));
+  if (!_0x4c3bf5 || !_0x194be8) return;
+  _0x4c3bf5[_0xafcf47(0x10c)]("click", () => {
+    const _0x426a0e = _0xafcf47,
+      _0x351134 = _0x194be8[_0x426a0e(0xcc)][_0x426a0e(0xea)](_0x426a0e(0xff));
+    _0x194be8["classList"][_0x426a0e(0xeb)]("opacity-100", !_0x351134),
+      _0x194be8["classList"][_0x426a0e(0xeb)](_0x426a0e(0xfb), !_0x351134),
+      _0x194be8[_0x426a0e(0xcc)][_0x426a0e(0xeb)](_0x426a0e(0xb5), !_0x351134),
+      _0x194be8[_0x426a0e(0xcc)][_0x426a0e(0xeb)](_0x426a0e(0xbd), _0x351134),
+      _0x194be8["classList"][_0x426a0e(0xeb)]("pointer-events-none", _0x351134),
+      _0x194be8[_0x426a0e(0xcc)][_0x426a0e(0xeb)](_0x426a0e(0xe4), _0x351134);
   });
 }
-
-// ==============================
-// Pausar la animación automática al pasar el mouse sobre indicadores
-// ==============================
-indicatorContainer.addEventListener("mouseenter", () =>
-  clearInterval(slideInterval)
-);
-indicatorContainer.addEventListener("mouseleave", () => {
-  slideInterval = setInterval(nextSlide, 5000);
-});
-
-// ==============================
-// Animación del logo y navbar al hacer scroll
-// ==============================
-window.addEventListener("scroll", function () {
-  const navbar = document.querySelector(".navbar");
-  const logoImg = document.getElementById("logo");
-
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-    logoImg.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-    logoImg.classList.remove("scrolled");
+function initSlider() {
+  const _0x3b4ed5 = _0x3375,
+    _0x55b04a = document["getElementById"]("slider-container"),
+    _0x52ed20 = document[_0x3b4ed5(0xf2)]("#slider-container\x20img"),
+    _0x5b9a9c = document[_0x3b4ed5(0x11d)](_0x3b4ed5(0x103));
+  if (!_0x55b04a || _0x52ed20[_0x3b4ed5(0xb0)] === 0x0 || !_0x5b9a9c) return;
+  let _0x1b8337 = 0x0;
+  const _0x42375d = _0x52ed20[_0x3b4ed5(0xb0)];
+  _0x55b04a["style"][_0x3b4ed5(0xb1)] = _0x42375d * 0x64 + "vw";
+  function _0x2f79bc(_0x51fd0f) {
+    const _0x1bf35e = _0x3b4ed5;
+    (_0x1b8337 = (_0x51fd0f + _0x42375d) % _0x42375d),
+      (_0x55b04a["style"][_0x1bf35e(0xd0)] =
+        _0x1bf35e(0x10e) + _0x1b8337 * 0x64 + _0x1bf35e(0xc8)),
+      _0x2bbfdc();
   }
-});
-// Para el boton deslizante
-const scrollBtn = document.getElementById("scrollToTopBtn");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    scrollBtn.classList.add("show");
-  } else {
-    scrollBtn.classList.remove("show");
+  function _0x2bbfdc() {
+    const _0x815358 = _0x3b4ed5,
+      _0x2bdccb = _0x5b9a9c[_0x815358(0xf2)](_0x815358(0x110));
+    _0x2bdccb[_0x815358(0xe7)]((_0x16e83b, _0x276df8) => {
+      const _0x124ba0 = _0x815358;
+      _0x16e83b["classList"]["toggle"](
+        _0x124ba0(0xe0),
+        _0x276df8 === _0x1b8337
+      );
+    });
   }
-});
-
-scrollBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
+  (window[_0x3b4ed5(0xd6)] = function () {
+    _0x2f79bc(_0x1b8337 + 0x1);
+  }),
+    (window["prevSlide"] = function () {
+      _0x2f79bc(_0x1b8337 - 0x1);
+    }),
+    _0x52ed20[_0x3b4ed5(0xe7)]((_0x500985, _0x5a9f59) => {
+      const _0x2016b9 = _0x3b4ed5,
+        _0x3b8af7 = document[_0x2016b9(0x100)]("span");
+      _0x3b8af7[_0x2016b9(0x10c)](_0x2016b9(0xf4), () => _0x2f79bc(_0x5a9f59)),
+        _0x5b9a9c[_0x2016b9(0x107)](_0x3b8af7);
+    });
+  let _0xa0dc29 = setInterval(window["nextSlide"], 0x1388);
+  const _0x5119e6 = document["querySelector"](".slider");
+  _0x5119e6?.[_0x3b4ed5(0x10c)]("mouseenter", () => clearInterval(_0xa0dc29)),
+    _0x5119e6?.[_0x3b4ed5(0x10c)]("mouseleave", () => {
+      const _0x3d776b = _0x3b4ed5;
+      _0xa0dc29 = setInterval(window[_0x3d776b(0xd6)], 0x1388);
+    }),
+    document[_0x3b4ed5(0xf2)](_0x3b4ed5(0xbf))[_0x3b4ed5(0xe7)]((_0x2b6f53) => {
+      const _0x413e7f = _0x3b4ed5;
+      _0x2b6f53[_0x413e7f(0x10c)]("click", () => {
+        const _0x4af275 = _0x413e7f;
+        _0x2b6f53[_0x4af275(0xcc)][_0x4af275(0xdd)](_0x4af275(0x11b)),
+          setTimeout(
+            () => _0x2b6f53[_0x4af275(0xcc)]["remove"](_0x4af275(0x11b)),
+            0x1f4
+          );
+      });
+    }),
+    _0x5b9a9c[_0x3b4ed5(0x10c)](_0x3b4ed5(0x114), () =>
+      clearInterval(_0xa0dc29)
+    ),
+    _0x5b9a9c[_0x3b4ed5(0x10c)](_0x3b4ed5(0xd4), () => {
+      const _0x2c3f19 = _0x3b4ed5;
+      _0xa0dc29 = setInterval(window[_0x2c3f19(0xd6)], 0x1388);
+    }),
+    _0x2f79bc(_0x1b8337);
+}
+function initScrollToTop() {
+  const _0x4ff905 = _0x3375,
+    _0x1c0550 = document[_0x4ff905(0x11d)](_0x4ff905(0x121));
+  if (!_0x1c0550) return;
+  window["addEventListener"](_0x4ff905(0xc4), () => {
+    const _0x2895fb = _0x4ff905;
+    _0x1c0550[_0x2895fb(0xcc)][_0x2895fb(0xeb)](
+      _0x2895fb(0x10a),
+      window[_0x2895fb(0xd7)] > 0x12c
+    );
+  }),
+    _0x1c0550[_0x4ff905(0x10c)]("click", (_0x4240f2) => {
+      const _0x1934c6 = _0x4ff905;
+      _0x4240f2[_0x1934c6(0xb4)](),
+        window["scrollTo"]({ top: 0x0, behavior: "smooth" });
+    });
+}
+function initLightboxModal() {
+  const _0x330435 = _0x3375,
+    _0x89a06 = document[_0x330435(0x11d)]("lightbox-modal"),
+    _0x1c7277 = document[_0x330435(0x11d)](_0x330435(0xdf)),
+    _0x580f69 = document["getElementById"](_0x330435(0xfc)),
+    _0x441cbe = document["getElementById"](_0x330435(0xcd)),
+    _0x3dc2b2 = document[_0x330435(0x11d)](_0x330435(0x101)),
+    _0xedb8d8 = document[_0x330435(0xf2)](_0x330435(0xf1)),
+    _0x1b2ceb = Array[_0x330435(0x120)](_0xedb8d8)[_0x330435(0xb6)](
+      (_0x5bf6c0) => _0x5bf6c0[_0x330435(0x10b)]
+    );
+  let _0x2a2b0d = 0x0;
+  window[_0x330435(0xb9)] = function (_0x55f39f) {
+    const _0x4425fd = _0x330435;
+    (_0x2a2b0d = _0x1b2ceb[_0x4425fd(0xb8)](_0x55f39f)),
+      _0x2a2b0d !== -0x1 &&
+        (_0x3b2e35(), _0x89a06[_0x4425fd(0xcc)][_0x4425fd(0x106)]("hidden"));
+  };
+  function _0x3b2e35() {
+    const _0x5435ec = _0x330435;
+    _0x1c7277[_0x5435ec(0x10b)] = _0x1b2ceb[_0x2a2b0d];
+  }
+  _0x580f69?.["addEventListener"](_0x330435(0xf4), () => {
+    const _0xa070cd = _0x330435;
+    _0x89a06[_0xa070cd(0xcc)][_0xa070cd(0xdd)]("hidden");
+  }),
+    _0x441cbe?.[_0x330435(0x10c)](_0x330435(0xf4), () => {
+      const _0x386748 = _0x330435;
+      (_0x2a2b0d =
+        (_0x2a2b0d - 0x1 + _0x1b2ceb[_0x386748(0xb0)]) %
+        _0x1b2ceb[_0x386748(0xb0)]),
+        _0x3b2e35();
+    }),
+    _0x3dc2b2?.[_0x330435(0x10c)]("click", () => {
+      const _0x3c5a01 = _0x330435;
+      (_0x2a2b0d = (_0x2a2b0d + 0x1) % _0x1b2ceb[_0x3c5a01(0xb0)]), _0x3b2e35();
+    }),
+    _0x89a06?.[_0x330435(0x10c)](_0x330435(0xf4), (_0x34506b) => {
+      const _0x4d7e58 = _0x330435;
+      _0x34506b[_0x4d7e58(0xf5)] === _0x89a06 &&
+        _0x89a06[_0x4d7e58(0xcc)][_0x4d7e58(0xdd)](_0x4d7e58(0x10f));
+    }),
+    document["addEventListener"](_0x330435(0x105), (_0x596284) => {
+      const _0x5da995 = _0x330435;
+      if (!_0x89a06["classList"][_0x5da995(0xea)](_0x5da995(0x10f))) {
+        if (_0x596284["key"] === "ArrowRight")
+          (_0x2a2b0d = (_0x2a2b0d + 0x1) % _0x1b2ceb[_0x5da995(0xb0)]),
+            _0x3b2e35();
+        else {
+          if (_0x596284[_0x5da995(0x122)] === _0x5da995(0x115))
+            (_0x2a2b0d =
+              (_0x2a2b0d - 0x1 + _0x1b2ceb[_0x5da995(0xb0)]) %
+              _0x1b2ceb["length"]),
+              _0x3b2e35();
+          else
+            _0x596284[_0x5da995(0x122)] === "Escape" &&
+              _0x89a06[_0x5da995(0xcc)][_0x5da995(0xdd)](_0x5da995(0x10f));
+        }
+      }
+    });
+}
+function initMiniChat() {
+  const _0x8adcd4 = _0x3375,
+    _0x34ff20 = document[_0x8adcd4(0x11d)](_0x8adcd4(0x11a)),
+    _0x32b4cc = document[_0x8adcd4(0x11d)](_0x8adcd4(0xf7));
+  if (!_0x34ff20 || !_0x32b4cc) return;
+  const _0x442752 = new Date(),
+    _0x31e0f3 = _0x442752[_0x8adcd4(0xbe)](),
+    _0x282591 = _0x8adcd4(0xc0),
+    _0xe60d08 = {
+      mañana: [_0x8adcd4(0xd1), _0x8adcd4(0x108), _0x8adcd4(0xce)],
+      tarde: [
+        "¡Buenas\x20tardes!\x20Si\x20alguno\x20de\x20nuestros\x20proyectos\x20te\x20inspiró,\x20¡cotiza\x20aquí!\x20👷‍♂️",
+        _0x8adcd4(0xf0),
+        _0x8adcd4(0x109),
+      ],
+      noche: [
+        "¡Buenas\x20noches!\x20¿Viste\x20algo\x20que\x20te\x20encantó?\x20Escríbenos\x20tu\x20idea\x20👷‍♂️",
+        _0x8adcd4(0xef),
+        _0x8adcd4(0xed),
+      ],
+    };
+  let _0x11829a = [];
+  if (_0x31e0f3 >= 0x6 && _0x31e0f3 < 0xc)
+    _0x11829a = _0xe60d08[_0x8adcd4(0xfd)];
+  else
+    _0x31e0f3 >= 0xc && _0x31e0f3 < 0x12
+      ? (_0x11829a = _0xe60d08[_0x8adcd4(0xcb)])
+      : (_0x11829a = _0xe60d08["noche"]);
+  const _0x522ebd =
+    _0x8adcd4(0x111) +
+    _0x282591 +
+    _0x8adcd4(0xd2) +
+    encodeURIComponent(_0x8adcd4(0x11e));
+  let _0x14adbd = ![];
+  _0x34ff20["addEventListener"]("click", () => {
+    const _0x58ee22 = _0x8adcd4;
+    (_0x14adbd = !![]), _0x32b4cc[_0x58ee22(0xcc)][_0x58ee22(0xdd)]("hide");
   });
+  function _0x4eeb0f(_0x1da675 = 0x0) {
+    const _0xae2d2b = _0x8adcd4;
+    if (_0x14adbd || _0x1da675 >= _0x11829a[_0xae2d2b(0xb0)]) return;
+    (_0x34ff20[_0xae2d2b(0xee)] = _0x522ebd),
+      (_0x34ff20[_0xae2d2b(0xcf)] = _0xae2d2b(0x11f) + _0x11829a[_0x1da675]),
+      _0x32b4cc[_0xae2d2b(0xcc)][_0xae2d2b(0x106)](_0xae2d2b(0xba)),
+      _0x32b4cc[_0xae2d2b(0xcc)]["add"](_0xae2d2b(0x10a)),
+      setTimeout(() => {
+        const _0x1120eb = _0xae2d2b;
+        _0x32b4cc[_0x1120eb(0xcc)][_0x1120eb(0x106)](_0x1120eb(0x10a)),
+          _0x32b4cc[_0x1120eb(0xcc)][_0x1120eb(0xdd)](_0x1120eb(0xba));
+      }, 0x1770),
+      setTimeout(() => {
+        _0x4eeb0f(_0x1da675 + 0x1);
+      }, 0x4e20);
+  }
+  function _0x2439a3() {
+    if (_0x14adbd) return;
+    _0x4eeb0f(0x0),
+      setTimeout(() => {
+        _0x2439a3();
+      }, 0x75300);
+  }
+  setTimeout(() => {
+    _0x2439a3();
+  }, 0xbb8);
+}
+function activarScrollRevealAvanzado() {
+  const _0x1bb8ab = _0x3375,
+    _0x4fbf87 = document[_0x1bb8ab(0xf2)](_0x1bb8ab(0xe6)),
+    _0x6defd3 = () => {
+      const _0x46c641 = _0x1bb8ab;
+      let _0x4e234a = [];
+      _0x4fbf87[_0x46c641(0xe7)]((_0x10b7e6) => {
+        const _0x1f101b = _0x46c641,
+          _0x55ff5a = _0x10b7e6["getBoundingClientRect"](),
+          _0x1a1ba7 =
+            _0x55ff5a[_0x1f101b(0x102)] < window["innerHeight"] - 0x14;
+        _0x1a1ba7 &&
+          !_0x10b7e6[_0x1f101b(0xcc)][_0x1f101b(0xea)](_0x1f101b(0xda)) &&
+          _0x4e234a["push"](_0x10b7e6);
+      }),
+        _0x4e234a[_0x46c641(0xe7)]((_0xf6b78, _0x42b914) => {
+          setTimeout(() => {
+            const _0x55a229 = _0x3375;
+            _0xf6b78[_0x55a229(0xcc)]["add"](_0x55a229(0xda)),
+              (_0xf6b78["style"][_0x55a229(0xb7)] = "0s");
+          }, _0x42b914 * 0x64);
+        });
+    };
+  window[_0x1bb8ab(0x10c)](_0x1bb8ab(0xc4), _0x6defd3),
+    window["addEventListener"](_0x1bb8ab(0xc3), _0x6defd3),
+    _0x6defd3();
+}
+function initBotonesCotizar() {
+  const _0x299385 = _0x3375,
+    _0x3d98b3 = document[_0x299385(0xf2)](_0x299385(0xde));
+  _0x3d98b3[_0x299385(0xe7)]((_0xe114aa) => {
+    const _0x1815ad = _0x299385,
+      _0x211dc7 = _0xe114aa[_0x1815ad(0xe9)];
+    if (!_0x211dc7 || _0x211dc7[_0x1815ad(0xf3)](_0x1815ad(0x112))) return;
+    _0x211dc7[_0x1815ad(0xcc)][_0x1815ad(0xdd)](_0x1815ad(0xe3));
+    const _0x5dbdd0 = _0xe114aa[_0x1815ad(0xe1)]("src"),
+      _0x2d4185 = _0x5dbdd0[_0x1815ad(0xdc)]("/")
+        [_0x1815ad(0xc2)]()
+        [_0x1815ad(0xdc)](".")[0x0];
+    _0xe114aa[_0x1815ad(0xc6)](_0x1815ad(0xc9), _0x2d4185);
+    const _0x21f386 = document[_0x1815ad(0x100)](_0x1815ad(0xe8));
+    (_0x21f386[_0x1815ad(0xd3)] = _0x1815ad(0xd8)),
+      (_0x21f386[_0x1815ad(0xcf)] = "Cotizar"),
+      (_0x21f386[_0x1815ad(0xc1)] = () => enviarWhatsApp(_0x21f386)),
+      _0x211dc7[_0x1815ad(0x107)](_0x21f386);
+  });
+}
+function formatearNombreProyecto(_0x24d3bc) {
+  const _0x41aa17 = _0x3375;
+  return _0x24d3bc["replace"](/[-_]/g, "\x20")
+    [_0x41aa17(0x117)](/[0-9]+$/, "")
+    [_0x41aa17(0x117)](/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/g, "")
+    [_0x41aa17(0xfe)]()
+    [_0x41aa17(0x117)](/\s+/g, "\x20")
+    ["replace"](/\b\w/g, (_0x401ecd) => _0x401ecd["toUpperCase"]());
+}
+function enviarWhatsApp(_0x158b61) {
+  const _0x1cbbcc = _0x3375,
+    _0x41b5c1 = _0x1cbbcc(0xc0),
+    _0x91aa10 = _0x158b61?.[_0x1cbbcc(0xe9)]?.[_0x1cbbcc(0xf3)](
+      _0x1cbbcc(0x104)
+    );
+  let _0x12b474 =
+    _0x91aa10?.["getAttribute"](_0x1cbbcc(0xc9)) || _0x1cbbcc(0x119);
+  _0x12b474 = formatearNombreProyecto(_0x12b474);
+  const _0x6aad34 =
+      _0x1cbbcc(0xf8) +
+      _0x12b474 +
+      "\x22.\x20¿Podrías\x20darme\x20más\x20información?",
+    _0x1b682c =
+      "https://wa.me/" +
+      _0x41b5c1 +
+      _0x1cbbcc(0xd2) +
+      encodeURIComponent(_0x6aad34);
+  window[_0x1cbbcc(0x11c)](_0x1b682c, "_blank");
+}
+function _0x1e45() {
+  const _0x5552b1 = [
+    "hidden",
+    "span",
+    "https://wa.me/",
+    ".boton-cotizar",
+    "10GLkAWv",
+    "mouseenter",
+    "ArrowLeft",
+    "menu-toggle",
+    "replace",
+    "2BiQjJR",
+    "proyecto",
+    "whatsapp-chat-link",
+    "clicked",
+    "open",
+    "getElementById",
+    "¡Hola!\x20Me\x20encantaría\x20cotizar\x20mi\x20mueble\x20soñado.",
+    "👋\x20",
+    "from",
+    "scrollToTopBtn",
+    "key",
+    "56AgquHl",
+    "length",
+    "width",
+    "menu-list",
+    "Cotizar",
+    "preventDefault",
+    "translate-y-0",
+    "map",
+    "transitionDelay",
+    "indexOf",
+    "mostrarModal",
+    "hide",
+    "2420886TxoNEV",
+    "title",
+    "opacity-0",
+    "getHours",
+    ".slider-button",
+    "56951858928",
+    "onclick",
+    "pop",
+    "resize",
+    "scroll",
+    "2423597UUiiwF",
+    "setAttribute",
+    "DOMContentLoaded",
+    "vw)",
+    "data-nombre",
+    "Cotizar\x20proyecto:\x20",
+    "tarde",
+    "classList",
+    "lightbox-prev",
+    "Explora\x20la\x20galería\x20y\x20transforma\x20tus\x20ideas\x20en\x20un\x20proyecto\x20real\x20💡🪑",
+    "innerText",
+    "transform",
+    "¡Buenos\x20días!\x20¿Te\x20gustó\x20algún\x20diseño?\x20Hablemos\x20sobre\x20tu\x20mueble\x20ideal\x20👷‍♂️",
+    "?text=",
+    "className",
+    "mouseleave",
+    "569658VvbniH",
+    "nextSlide",
+    "scrollY",
+    "boton-cotizar",
+    "logo",
+    "visible",
+    "660195VyJqjv",
+    "split",
+    "add",
+    ".reveal\x20img",
+    "lightbox-image",
+    "active",
+    "getAttribute",
+    "scrolled",
+    "relative",
+    "-translate-y-4",
+    ".logo-texto",
+    ".reveal",
+    "forEach",
+    "button",
+    "parentElement",
+    "contains",
+    "toggle",
+    ".navbar",
+    "Déjanos\x20un\x20mensaje\x20y\x20recibe\x20una\x20propuesta\x20exclusiva\x20para\x20ti\x20🌙✨",
+    "href",
+    "Tu\x20mueble\x20soñado\x20puede\x20ser\x20realidad.\x20¡Haz\x20clic\x20para\x20cotizarlo!",
+    "¿Tienes\x20en\x20mente\x20un\x20diseño\x20para\x20tu\x20oficina\x20o\x20casa?\x20Te\x20ayudamos\x20sin\x20compromiso.",
+    "[onclick^=\x22mostrarModal\x22]",
+    "querySelectorAll",
+    "querySelector",
+    "click",
+    "target",
+    "9040keKZuP",
+    "whatsapp-mini-chat",
+    "¡Hola!\x20Me\x20interesa\x20cotizar\x20el\x20proyecto\x20\x22",
+    "136216JYHgrP",
+    "5987979ZIrQrL",
+    "pointer-events-auto",
+    "lightbox-close",
+    "mañana",
+    "trim",
+    "opacity-100",
+    "createElement",
+    "lightbox-next",
+    "top",
+    "slider-indicators",
+    "img",
+    "keydown",
+    "remove",
+    "appendChild",
+    "Nuestros\x20muebles\x20modernos\x20son\x20perfectos\x20para\x20tu\x20hogar.\x20¡Cotiza\x20fácil\x20aquí!",
+    "Envíanos\x20un\x20mensaje\x20y\x20recibe\x20ideas\x20personalizadas\x20para\x20tu\x20espacio\x20🏠📐",
+    "show",
+    "src",
+    "addEventListener",
+    "1544VcLYyK",
+    "translateX(-",
+  ];
+  _0x1e45 = function () {
+    return _0x5552b1;
+  };
+  return _0x1e45();
+}
+function initBotonesCotizar() {
+  const _0x23bda8 = _0x3375,
+    _0x2861e2 = document[_0x23bda8(0xf2)](_0x23bda8(0xde));
+  _0x2861e2[_0x23bda8(0xe7)]((_0xfe9698) => {
+    const _0x4b8e6e = _0x23bda8,
+      _0x57effc = _0xfe9698[_0x4b8e6e(0xe9)];
+    if (!_0x57effc || _0x57effc[_0x4b8e6e(0xf3)](_0x4b8e6e(0x112))) return;
+    _0x57effc["classList"][_0x4b8e6e(0xdd)](_0x4b8e6e(0xe3));
+    const _0x4ef734 = _0xfe9698[_0x4b8e6e(0xe1)]("src");
+    let _0x3e8970 = _0x4ef734[_0x4b8e6e(0xdc)]("/")
+      ["pop"]()
+      [_0x4b8e6e(0xdc)](".")[0x0];
+    _0xfe9698["setAttribute"](_0x4b8e6e(0xc9), _0x3e8970);
+    const _0x27d053 = _0x3e8970[_0x4b8e6e(0x117)](/[-_]/g, "\x20")["replace"](
+        /\b\w/g,
+        (_0x2790b7) => _0x2790b7["toUpperCase"]()
+      ),
+      _0x27738d = document[_0x4b8e6e(0x100)](_0x4b8e6e(0xe8));
+    (_0x27738d[_0x4b8e6e(0xd3)] = _0x4b8e6e(0xd8)),
+      (_0x27738d["innerText"] = _0x4b8e6e(0xb3)),
+      (_0x27738d[_0x4b8e6e(0xbc)] = _0x4b8e6e(0xca) + _0x27d053),
+      (_0x27738d[_0x4b8e6e(0xc1)] = () => enviarWhatsApp(_0x27738d)),
+      _0x57effc["appendChild"](_0x27738d);
+  });
+}
+document[_0x471cd7(0x10c)](_0x471cd7(0xc7), () => {
+  initScrollAnimation(),
+    initHamburgerMenu(),
+    initSlider(),
+    initScrollToTop(),
+    initLightboxModal(),
+    initMiniChat(),
+    activarScrollRevealAvanzado(),
+    initBotonesCotizar();
 });
-
-// script de modal
-function mostrarModal(ruta) {
-  const modal = document.getElementById("modalImagen");
-  const img = document.getElementById("imagenModal");
-  img.src = ruta;
-  modal.classList.remove("hidden");
-}
-
-function cerrarModal(e) {
-  if (e) e.stopPropagation(); // Evita cerrar si clic en imagen
-  document.getElementById("modalImagen").classList.add("hidden");
-}

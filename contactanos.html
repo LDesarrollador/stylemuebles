@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Diseño y Fabricación de Cocinas y Muebles a Medida en Chile y Perú | STYLE
+    </title>
+
+    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
+
+    <meta
+      name="description"
+      content="Diseñamos y fabricamos cocinas y muebles a medida en melamina. En STYLE creamos espacios modernos y funcionales en Chile y Perú. Transforma tu hogar con muebles personalizados de alta calidad."
+    />
+
+    <meta
+      name="keywords"
+      content="cocinas a medida, muebles en melamina, muebles personalizados, diseño de cocinas, closets a medida, muebles modernos, Chile, Perú"
+    />
+
+    <!-- Autor -->
+    <meta name="author" content="STYLE Muebles a Medida" />
+
+    <meta
+      property="og:title"
+      content="Cocinas y Muebles a Medida en Chile y Perú | STYLE"
+    />
+    <meta
+      property="og:description"
+      content="Especialistas en diseño y fabricación de cocinas y muebles en melamina. Calidad y funcionalidad para tu hogar en todo Chile y Perú."
+    />
+    <meta
+      property="og:image"
+      content="https://stylemuebles.com/imagenes/og-image.jpg"
+    />
+    <meta property="og:url" content="https://stylemuebles.com" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Cocinas y Muebles en Chile y Perú | STYLE Muebles"
+    />
+    <meta
+      name="twitter:description"
+      content="Fabricamos cocinas y muebles a medida en melamina con estilo y precisión en todo Chile y Perú."
+    />
+    <meta
+      name="twitter:image"
+      content="https://stylemuebles.com/imagenes/og-image.jpg"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+
+    <link href="css/contactanos.css" rel="stylesheet" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <!-- Logo superior izquierdo -->
+      <div class="logo">
+        <img
+          src="imagenes/logo-grande.png"
+          alt="Logo de STYLE, Muebles a Medida"
+          class="logo-img"
+          id="logo"
+        />
+        <img
+          src="imagenes/logosuperior.png"
+          alt="Logo con letras de STYLE Muebles a Medida"
+          class="h-10 w-auto sm:block logo-texto"
+        />
+        <!-- class="h-10 w-auto hidden sm:block logo-texto" -- el hidden oculta en mobil -->
+        <span class="logo-muebles">Muebles</span>
+      </div>
+
+      <!-- Menú de navegación principal -->
+
+      <nav
+        class="navbar flex items-center justify-between relative px-4"
+        role="navigation"
+        aria-label="Menú principal"
+      >
+        <!-- Botón hamburguesa  -->
+        <button
+          id="menu-toggle"
+          class="sm:hidden text-white p-2"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+        >
+          ☰
+        </button>
+
+        <!-- Menú de navegación -->
+        <ul
+          id="menu-list"
+          class="absolute top-full right-0 text-right w-full bg-black bg-opacity-80 text-white opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4 px-4 py-3 sm:static sm:flex sm:opacity-100 sm:pointer-events-auto sm:translate-y-0 sm:space-x-6 sm:space-y-0 sm:bg-transparent sm:text-black sm:justify-end sm:items-center sm:px-0 sm:py-0"
+        >
+          <li>
+            <a href="index.html">Inicio</a>
+          </li>
+          <li><a href="quienessomos.html">Quiénes somos</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li>
+            <a href="contactanos.html" class="font-bold text-yellow-500"
+              >Contáctanos</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="pb-22">
+      <h1 class="visually-hidden">STYLE Muebles a Medida</h1>
+
+      <!-- Slider de imágenes de contáctanos -->
+      <div class="slider">
+        <div class="slider-container" id="slider-container">
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/pedidos/slider/pedidosmobile4.png"
+            />
+            <img
+              src="imagenes/pedidos/slider/bannerpedidosweb1.gif"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/pedidos/slider/pedidosmobile5.png"
+            />
+            <img
+              src="imagenes/pedidos/slider/bannerpedidosweb2.gif"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+
+          <picture>
+            <source
+              media="(max-width: 768px)"
+              srcset="imagenes/pedidos/slider/pedidosmobile6.png"
+            />
+            <img
+              src="imagenes/pedidos/slider/bannerpedidosweb3.gif"
+              alt="Proyecto de cocina moderna con acabados en madera"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <div class="slider-text-overlay">
+          <h2 class="slider-heading">Escríbenos...</h2>
+          <a
+            href="https://wa.me/56951858928?text=%C2%A1Hola!%20Me%20encant%C3%B3%20lo%20que%20vi%20en%20su%20web%20%20Estoy%20buscando%20un%20mueble%20a%20medida.%20%C2%BFMe%20pueden%20ayudar%3F"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="slider-subtext"
+          >
+            Cotizar ahora
+          </a>
+        </div>
+
+        <!-- Controles de navegación del slider -->
+        <div class="slider-controls">
+          <div
+            class="slider-button"
+            onclick="prevSlide()"
+            role="button"
+            aria-label="Anterior"
+            tabindex="0"
+          >
+            &#10094;
+          </div>
+          <div
+            class="slider-button"
+            onclick="nextSlide()"
+            role="button"
+            aria-label="Siguiente"
+            tabindex="0"
+          >
+            &#10095;
+          </div>
+        </div>
+      </div>
+      <div class="slider-indicators" id="slider-indicators"></div>
+
+      <h2 class="text-center mt-10 text-2xl font-bold text-gray-800">
+        Realiza tu pedido de muebles a medida en Chile y Perú
+      </h2>
+      <div class="text-center mt-1">
+        <p>
+          Cotiza directamente con nuestro equipo y encarga muebles
+          personalizados para tu cocina, baño o clóset con acabados de alta
+          calidad.
+        </p>
+      </div>
+      <!-- Formulario de contacto -->
+      <div class="max-w-xl mx-auto mt-10 px-4">
+        <h3 class="text-xl font-semibold text-center mb-4">Haz tu pedido</h3>
+        <form id="contacto-form" class="space-y-4">
+          <div>
+            <label for="nombre" class="block text-sm font-medium text-gray-700"
+              >Nombre</label
+            >
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              class="mt-1 block w-full border border-gray-300 rounded-lg p-2"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="mt-1 block w-full border border-gray-300 rounded-lg p-2"
+              required
+            />
+          </div>
+
+          <div>
+            <label for="mensaje" class="block text-sm font-medium text-gray-700"
+              >Mensaje o detalle del mueble</label
+            >
+            <textarea
+              id="mensaje"
+              name="mensaje"
+              rows="4"
+              class="mt-1 block w-full border border-gray-300 rounded-lg p-2"
+              required
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition w-full"
+          >
+            Enviar
+          </button>
+        </form>
+      </div>
+      <h3 class="text-center text-lg font-semibold mb-6">
+        Siguenos en nuestras redes oficiales
+      </h3>
+      <!-- Redes sociales oficiales -->
+      <div class="social-icons">
+        <a
+          href="https://www.facebook.com/profile.php?id=61554656864675"
+          target="_blank"
+          aria-label="Facebook"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/style.grupo/"
+          target="_blank"
+          aria-label="Instagram"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://www.tiktok.com/@style_muebles"
+          target="_blank"
+          aria-label="TikTok"
+        >
+          <i class="fab fa-tiktok"></i>
+        </a>
+        <a href="mailto:ventas@stylemuebles.cl.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+
+      <!-- Sección informativa final -->
+      <section class="bg-white px-4 py-10 max-w-6xl mx-auto">
+        <!-- 1. Presencia en Chile -->
+        <div class="text-center mb-12">
+          <h2 class="text-2xl font-bold text-gray-800 mb-4">
+            Presencia en todo Chile
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto mb-6">
+            Enviamos muebles a todas las regiones de Chile desde nuestra base en
+            Santiago. ¡Llegamos donde estés!
+          </p>
+          <!-- Mapa Google Maps: Santiago Centro -->
+          <div
+            class="w-full max-w-3xl mx-auto mb-10 rounded-lg overflow-hidden shadow-lg"
+          >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.577574269895!2d-70.65045008480933!3d-33.43723288076916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c59e0bb2a33d%3A0x6d3737d94b2dfe4f!2sSantiago%20Centro%2C%20Regi%C3%B3n%20Metropolitana%2C%20Chile!5e0!3m2!1ses-419!2scl!4v1717697802465!5m2!1ses-419!2scl"
+              width="100%"
+              height="300"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+          <div class="mx-auto max-w-xl">
+            <p class="text-center text-gray-700 text-sm mt-6">
+              *Coordinamos despachos e instalaciones desde nuestro centro de
+              operaciones en Santiago para todo Chile, asegurando un servicio
+              completo y puntual.
+            </p>
+          </div>
+        </div>
+
+        <!-- 2. Testimonios de clientes -->
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-gray-800 text-center mb-6">
+            Lo que dicen nuestros clientes
+          </h2>
+          <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div class="bg-gray-100 p-6 rounded-lg shadow">
+              <p class="italic text-gray-700 mb-4">
+                “Encantada con mi cocina. Todo a medida, rápido y hermoso.”
+              </p>
+              <p class="font-semibold text-gray-800">
+                — Camila S., Viña del Mar
+              </p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow">
+              <p class="italic text-gray-700 mb-4">
+                “El diseño quedó perfecto. Lo recomendaría mil veces.”
+              </p>
+              <p class="font-semibold text-gray-800">— Jorge R., Concepción</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-lg shadow">
+              <p class="italic text-gray-700 mb-4">
+                “Fueron muy profesionales. Entrega a tiempo y excelente
+                atención.”
+              </p>
+              <p class="font-semibold text-gray-800">— Ana T., Puerto Montt</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Nuestro proceso en 3 pasos -->
+        <div class="text-center my-12">
+          <h2 class="text-2xl font-bold text-gray-800 mb-6">
+            ¿Cómo trabajamos?
+          </h2>
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- Paso 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md border">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 mx-auto text-blue-600 mb-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 10h.01M12 14h.01M16 10h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8 9 3.582 9 8z"
+                />
+              </svg>
+              <h3 class="font-semibold text-lg mb-2">Contáctanos</h3>
+              <p class="text-gray-600">
+                Nos escribes con tu idea o necesidad. Te asesoramos y cotizamos
+                sin compromiso.
+              </p>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md border">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 mx-auto text-green-600 mb-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M20 12l-8 4-8-4m16 0l-8-4-8 4m16 0v4l-8 4-8-4v-4"
+                />
+              </svg>
+              <h3 class="font-semibold text-lg mb-2">Diseñamos a medida</h3>
+              <p class="text-gray-600">
+                Creamos un diseño personalizado que se ajuste a tu espacio y
+                estilo.
+              </p>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md border">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-10 w-10 mx-auto text-purple-600 mb-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 10h1l1-2h13l1 2h1m-4 0v10m-6 0v-4a2 2 0 012-2h4"
+                />
+              </svg>
+              <h3 class="font-semibold text-lg mb-2">Fabricamos y enviamos</h3>
+              <p class="text-gray-600">
+                Fabricamos con materiales de calidad y enviamos a cualquier
+                punto de Chile.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a
+      href="https://wa.me/56951858928?text=Hola!%20Me%20gustaron%20mucho%20los%20dise%C3%B1os%20que%20vi%20en%20su%20web.%20Me%20gustar%C3%ADa%20hacer%20una%20cotizaci%C3%B3n%2C%20por%20favor."
+      class="whatsapp-button"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar vía WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Chat WhatsApp personalizado en esquina -->
+    <div id="whatsapp-mini-chat" class="mini-chat hide">
+      <a
+        id="whatsapp-chat-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        👋 Cargando mensaje...
+      </a>
+    </div>
+
+    <!--  -->
+    <!-- Pie de página -->
+    <footer class="footer text-center py-4 bg-gray-100 text-gray-800">
+      <p>&copy; 2025 STYLE Muebles. Todos los derechos reservados.</p>
+    </footer>
+    <!-- boton deslizante -->
+    <a
+      href="#"
+      class="scroll-to-top"
+      id="scrollToTopBtn"
+      aria-label="Subir al inicio"
+    >
+      ↑
+    </a>
+
+    <!-- Script personalizado -->
+    <script src="js/contactanos.js"></script>
+  </body>
+</html>

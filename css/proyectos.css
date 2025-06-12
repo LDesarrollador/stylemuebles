@@ -21,6 +21,7 @@ body {
   border: 0;
 }
 
+
 /* ===============================
    Menú de navegación superior
 ================================ */
@@ -36,6 +37,7 @@ body {
   justify-content: flex-end;
   z-index: 1000;
   transition: top 0.3s ease;
+  height: 3.7rem;
 }
 
 .navbar a {
@@ -46,34 +48,64 @@ body {
 }
 
 .navbar a:hover {
-  color: #e45d1e;
+  color: #ed3e13;
 }
 
 .navbar.scrolled {
   top: 0 !important;
 }
-
 /* ===============================
    Logo flotante
 ================================ */
 .logo {
+  display: flex;
+align-items: center;
+gap: 0.5rem;
   position: fixed;
   top: 1.25rem;
   left: 0;
   z-index: 1001;
-  transition: top 0.3s ease;
+  transition: top 0.6s ease;
+
 }
 
 .logo-img {
   width: 7.5rem;
   height: auto;
   transition: all 0.3s ease;
+
 }
 
 .logo-img.scrolled {
   width: 5rem;
-  margin-top: 2.125rem;
+  /* transform: scale(0.8); */
 }
+
+/* para el imagen de style texto */
+.logo-texto {
+  margin-top: -2.5rem; 
+}
+.logo-texto.oculto {
+  display: none;
+}
+
+/* para el texto "Muebles"*/
+.logo-muebles {
+  color: black;
+  font-weight: 600;
+  margin-top: -1.5rem;
+  font-size: 2rem;
+  user-select: none;
+  /* transition: opacity 0.3s ease; */
+  opacity: 1; 
+}
+
+.logo-muebles.scrolled {
+  opacity: 0;
+  pointer-events: none; /* para evitar que sea interactuable cuando está oculto */
+}
+
+/*  */
 
 /* ===============================
    Slider principal
@@ -81,8 +113,8 @@ body {
 .slider {
   margin-top: 8.5rem;
   width: 100vw;
-  aspect-ratio: auto; 
-  max-height: 300px;    
+  /* aspect-ratio: auto;  */
+  max-height: clamp(200px, 30vh, 300px);
   overflow: hidden;
   position: relative;
   margin-bottom: 1rem;
@@ -124,17 +156,15 @@ body {
   padding: 0.5rem 1rem;
   font-weight: 700;
   font-size: 1rem;
-  color: #ffffff; /* Verde brillante estilo WhatsApp */
+  color: #ffffff;
   text-decoration: none;
 }
-
-
 /* ===============================
    Flechas de navegación del slider
 ================================ */
 .slider-controls {
   position: absolute;
-  top: 45%;
+  top: 50%;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -144,10 +174,10 @@ body {
 
 .slider-button {
   background-color: rgba(0, 0, 0, 0.603);
-  padding: 0.25rem;
+  padding: 0.450rem;
   color: white;
   cursor: pointer;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   border-radius: 0.3125rem;
   margin: 0 1rem;
   transition: outline 0.3s ease, background-color 0.3s ease;
@@ -157,7 +187,6 @@ body {
   outline: 2px solid #ffffffd0;
   background-color: rgba(0, 0, 0, 0.295);
 }
-
 
 /* ===============================
    Indicadores del slider
@@ -169,7 +198,7 @@ body {
   transform: translateX(-50%);
   display: flex;
   gap: 0.5rem;
-
+  
 }
 
 .slider-indicators span {
@@ -183,6 +212,49 @@ body {
 
 .slider-indicators span.active {
   background-color: #000;
+}
+/* Boton de galeria "cotizar" */
+  .boton-cotizar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: #ed3f13;
+    /* background-color: rgba(0, 128, 0, 0.7); verde semi-transparente */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .boton-cotizar:hover {
+
+    background-color: rgba(0, 128, 0, 0.9);
+  }
+
+  .relative {
+    position: relative;
+  }
+/* ===============================
+   Botón flotante dentro del slider
+================================ */
+.slider-button-float {
+  position: absolute;
+  bottom: 3%;
+  right: 1.875rem;
+  padding: 0.625rem 0.9375rem;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: underline; /* Subrayado */
+  font-style: oblique; /* Curvado */
+  font-size: 1.5rem; /* Tamaño del texto aumentado */
+  transition: background-color 0.3s ease;
 }
 
 /* ===============================
@@ -213,8 +285,9 @@ body {
 /* Boton deslizante */
 .scroll-to-top {
   position: fixed;
-  bottom: 5rem;
-  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem; 
+  right: auto;   
   width: 3rem;
   height: 3rem;
   background-color: #000;
@@ -240,9 +313,172 @@ body {
 .scroll-to-top:hover {
   background-color: #e45d1e;
 }
-/* Mobiles */
-@media screen and (max-width: 775px) {
 
+/* minichat  */
+.mini-chat {
+  position: fixed;
+  bottom: 6rem;
+  right: 1.25rem;
+  background-color: #25d366;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  max-width: 260px;
+  width: auto;
+  line-height: 1.4;
+  white-space: normal;
+  pointer-events: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  visibility: hidden;
+}
+
+/* Burbuja tipo triángulo */
+.mini-chat::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: #25d366 transparent transparent transparent;
+}
+
+/* Animación de entrada */
+.mini-chat.show {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+/* Animación de salida */
+.mini-chat.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+/* Animación de entrada desde abajo */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+transition: opacity 0.8s ease, transform 0.6s ease;
+  transition-delay: 0s; /* Esto se sobreescribe en JS */
+
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* ========== */
+/* Responsivos*/
+/* ========== */
+@media screen and (max-width: 1536px) {
+  .slider {
+    max-height: 26rem; 
+  }
+
+  .slider-container img {
+    height: 30rem; 
+    
+  }
+    h2.text-center.mt-12 {
+    margin-top: 1.9rem; 
+    margin-bottom: -0.50rem;
+  }
+
+  
+}
+
+/* 
+@media screen and (max-width: 1024px) {
+
+} */
+
+/*  */
+@media (min-width: 908px) {
+  
+  .slider-controls {
+    top: 0;
+    height: 100%;
+    pointer-events: none;
+    justify-content: space-between;
+    padding: 0; 
+  }
+
+  .slider-button {
+    height: 100%;
+    width: 3rem;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    font-size: 1.5rem;
+    margin: 0; 
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.856), transparent);
+    transition: background 0.3s ease;
+  }
+
+  .slider-button:last-child {
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  }
+
+  .slider-button:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+}
+
+@media screen and (max-width: 768px) {
+
+.logo-img {
+    margin-top: 2rem;
+    width: 5.5rem;
+  }
+.logo-img.scrolled{
+  width: 4.5rem;
+  margin-top: 0rem;
+}
+/* Del Png Style */
+.logo-texto{
+  margin-top: -1.5rem;
+  margin-left: -2.9rem;
+  transform: scale(0.6);
+  /* transform-origin: left; */
+  
+}
+/* del texto "Muebles" */
+.logo-muebles {
+  /* color: rgb(255, 255, 255); */
+    margin-left: -2.9rem;
+    margin-top: -1.099rem;
+    font-size: 1.5rem
+  }
+/* menu */
+.navbar {
+  position: fixed;
+  top: 5rem;
+  right: 0; 
+  height: 3.6rem;
+  width: auto; 
+  background-color: #000;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end; 
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
 .navbar a {
   color: white;
   margin: 0.5rem 0;
@@ -250,33 +486,51 @@ body {
   font-size: 0.8125rem;
 }
 
-.slider-controls {
- 
-  top: 50%;
+.navbar a:hover {
+  color: #e45d1e;
 }
-/* slider texto */
-.slider-text-overlay {
-   top: 1rem;         /* Menor separación superior */
-    left: 1.5rem;      /* Menor separación izquierda */
-    max-width: 90%;
-}
+/* slide */
+  .slider {
+    max-height: 25rem; 
+  }
 
-.slider-heading {
-  font-size: 1.8rem; /* Texto más pequeño en pantallas chicas */
-}
-
-.slider-subtext {
-    font-size: 0.85rem; /* Más pequeño el texto con fondo */
-    margin-top: 0.8rem; /* Menor separación entre los textos */
-    padding: 0.4rem 0.75rem;
-}
-/*  */
-.slider-button {
-  background-color: rgba(0, 0, 0, 0.418);
-  padding: 0.25rem;
+  .slider-container img {
+    height: 30rem; 
+  }
+/* ===============================
+   Botón flotante dentro del slider
+================================ */
+.slider-button-float {
+  position: absolute;
+  bottom: 3%;
+  right: 1.875rem;
+  padding: 0.625rem 0.9375rem;
   color: white;
-  font-size: 1rem;
-  margin: 0 1rem;
- 
+  border-radius: 0.5rem;
+  font-weight: bold;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: underline; 
+  font-style: oblique; 
+  font-size: 1.5rem; 
+  transition: background-color 0.3s ease;
 }
+
+.slider-button {
+  background-color: rgba(0, 0, 0, 0.603);
+  padding: 0.4rem;               
+  font-size: 1rem;              
+  border-radius: 0.25rem;        
+  color: white;
+  cursor: pointer;
+  margin: 0 0.75rem;            
+  transition: outline 0.3s ease, background-color 0.3s ease;
 }
+  .footer {
+    font-size: 0.75rem; 
+    padding-bottom: 5rem; 
+  }
+}
+

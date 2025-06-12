@@ -1,6 +1,4 @@
-/* ===============================
-   Fuente principal y scroll
-================================ */
+
 body {
   font-family: "Open Sans", sans-serif;
   overflow-x: hidden;
@@ -46,7 +44,7 @@ body {
 }
 
 .navbar a:hover {
-  color: #e45d1e;
+  color: #ed3e13;
 }
 
 .navbar.scrolled {
@@ -57,265 +55,484 @@ body {
    Logo flotante
 ================================ */
 .logo {
-  position: fixed;
-  top: 1.25rem;
-  left: 0;
-  z-index: 1001;
-  transition: top 0.3s ease;
+  display: flex;               
+  align-items: center;         
+  gap: 0.5rem;                 
+  position: fixed;           
+  top: 1.25rem;                
+  left: 0;                   
+  z-index: 1001;              
+  transition: top 0.6s ease;  
 }
 
+/* Imagen del logo */
 .logo-img {
   width: 7.5rem;
   height: auto;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; 
 }
 
 .logo-img.scrolled {
-  width: 5rem;
-  margin-top: 2.125rem;
+  width: 5rem;                 
+  /* transform: scale(0.8); */ /* Alternativa opcional si se prefiere usar escala */
+}
+
+/* Texto en forma de imagen (PNG) */
+.logo-texto {
+  margin-top: -2.5rem;        
+}
+
+.logo-texto.oculto {
+  display: none;
+}
+
+/* Texto "Muebles" */
+.logo-muebles {
+  color: black;
+  font-weight: 600;
+  margin-top: -1.5rem;         
+  font-size: 2rem;
+  user-select: none;          
+  opacity: 1;                  
+  /* transition: opacity 0.3s ease; */ /* Transición opcional si se desea suavizar el cambio */
+}
+
+
+.logo-muebles.scrolled {
+  opacity: 0;                  
+  pointer-events: none;        
 }
 
 /* ===============================
-   Slider principal
+   Slider
 ================================ */
 .slider {
-  flex: 0 0 100vw;
+  flex: 0 0 100vw;                    
   width: 100vw;
-  /* height: 100%; */
-  position: relative; /* Necesario para posicionar los textos sobre la imagen */
-  overflow: hidden;
-
-  margin-top: 8.50rem;
-  /* width: 100vw; */
+  position: relative;              
+  overflow: hidden;                 
+  margin-top: 8.5rem;               
+  margin-bottom: 1rem;             
   aspect-ratio: auto;
-  height: clamp(250px, 40vh, 400px);
-  position: relative;
-  margin-bottom: 1rem;
+  height: clamp(650px, 70vh, 850px); 
 }
 
+/* Contenedor de todos los slides (imágenes) */
 .slider-container {
-  display: flex;
-  transition: transform 0.5s ease;
-  width: calc(100vw * 3);
-  height: 100%; 
+  display: flex;                               
+  transition: transform 0.6s ease-in-out;   
+  width: calc(100vw * 3);                      
+  height: 100%;                               
 }
 
+/* Estilo para cada imagen dentro del slider */
 .slider-container img {
-  flex: 0 0 100vw;
+  flex: 0 0 100vw;               
   width: 100vw;
-  height: 100%; 
-  object-fit: cover;
+  height: 100%;                  
+  object-fit: cover;              
   display: block;
+  flex-shrink: 0;                 
 }
 
-/* slider texto */
+/* ===============================
+   Texto sobrepuesto 
+================================ */
 .slider-text-overlay {
-  position: absolute;
+  position: absolute;                          
   top: 1.5rem;
   left: 2.5rem;
-  color: rgb(255, 255, 255);
-  z-index: 10;
+  color: #fff;
+  z-index: 10;                                 
   max-width: 80%;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);   
 }
 
+/* Título principal dentro del slider */
 .slider-heading {
   font-size: 2.75rem;
   font-weight: 700;
   margin: 0 0 0.5rem 0;
 }
 
+/* llamada a la acción dentro del slider */
 .slider-subtext {
   display: inline-block;
-  background-color: rgba(236, 98, 18, 0.801);
+  background-color: rgba(236, 98, 18, 0.801); 
   padding: 0.5rem 1rem;
   font-weight: 700;
   font-size: 1rem;
-  color: #ffffff; /* Verde brillante estilo WhatsApp */
+  color: #ffffff;
   text-decoration: none;
 }
-
 /* ===============================
-   Flechas de navegación del slider
+   Flechas de navegación 
 ================================ */
 .slider-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 5;
+  position: absolute;          
+  top: 50%;                    
+  width: 100%;                
+  display: flex;             
+  justify-content: space-between; 
+  align-items: center;         
+  z-index: 5;                
 }
 
+/*  base (flechas) */
 .slider-button {
-  background-color: rgba(0, 0, 0, 0.603);
-  padding: 0.450rem;
-  color: white;
-  cursor: pointer;
-  font-size: 1.1rem;
-  border-radius: 0.3125rem;
-  margin: 0 1rem;
-  transition: outline 0.3s ease, background-color 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.603); 
+  padding: 0.45rem;                   
+  color: white;                     
+  cursor: pointer;                      
+  font-size: 1.1rem;                 
+  border-radius: 0.3125rem;         
+  margin: 0 1rem;                      
+  transition:                         
+    outline 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .slider-button.clicked {
-  outline: 2px solid #ffffffd0;
-  background-color: rgba(0, 0, 0, 0.295);
+  outline: 2px solid #ffffffd0;      
+  background-color: rgba(0, 0, 0, 0.295); 
 }
 
 /* ===============================
    Botón flotante dentro del slider
 ================================ */
 .slider-button-float {
-  position: absolute;
-  bottom: 33%;
-  right: 6.875rem;
-  padding: 0.625rem 0.9375rem;
-  color: white;
-  background-color: #00000065;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  position: absolute;                 
+  bottom: 33%;                       
+  right: 6.875rem;                   
+  padding: 0.625rem 0.9375rem;        
+  color: white;                      
+  background-color: #00000065;      
+  border-radius: 0.5rem;             
+  font-weight: bold;                  
+  z-index: 10;                        
+  display: flex;                      
+  align-items: center;               
+  gap: 0.5rem;                       
+  text-decoration: none;            
+  transition: background-color 0.3s ease; 
 }
 
 .slider-button-float:hover {
-  background-color: #4427017e;
+  background-color: #ed3e13;         
 }
 
 /* ===============================
-   Indicadores del slider
+   dots de navegación
 ================================ */
 .slider-indicators {
-  position: absolute;
-  /* bottom: rem; */
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 0.5rem;
+  position: absolute;               
+  left: 50%;                         
+  transform: translateX(-50%);        
+  display: flex;                      
+  gap: 0.5rem;                        
 
+  /* bottom: 1rem; */
 }
 
+/* Estilo base para cada punto indicador */
 .slider-indicators span {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: rgba(82, 79, 79, 0.6);
-  border-radius: 50%;
-  cursor: pointer;
+  width: 0.75rem;                    
+  height: 0.75rem;                    
+  background-color: rgba(82, 79, 79, 0.6); 
+  border-radius: 50%;                 
+  cursor: pointer;                
   transition: background-color 0.3s ease;
 }
 
+
 .slider-indicators span.active {
-  background-color: #000;
+  background-color: #000;     
 }
 
 /* ===============================
    Botón flotante de WhatsApp
 ================================ */
 .whatsapp-button {
-  position: fixed;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  background-color: #25d366;
-  width: 3.75rem;
-  height: 3.75rem;
-  border-radius: 50%;
-  color: white;
-  font-size: 1.75rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+  position: fixed;                        
+  bottom: 1.25rem;                  
+  right: 1.25rem;                          
+  background-color: #25d366;           
+  width: 3.75rem;                    
+  height: 3.75rem;                      
+  border-radius: 50%;                   
+  color: white;                         
+  font-size: 1.75rem;                   
+  display: flex;                      
+  align-items: center;                  
+  justify-content: center;                
+  text-decoration: none;             
   box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.2);
-  z-index: 999;
+  z-index: 999;            
 }
+
 
 .whatsapp-button:hover {
-  background-color: #128c7e;
+  background-color: #128c7e;              
+}
+/* ===============================
+   Botón deslizante 
+================================ */
+.scroll-to-top {
+  position: fixed;                          
+  bottom: 1.25rem;                        
+  left: 1.25rem;                         
+  right: auto;                             
+  width: 3rem;                             
+  height: 3rem;
+  background-color: #000;                   
+  color: white;                             
+  font-size: 1.5rem;                        
+  border-radius: 50%;                     
+  display: flex;                           
+  align-items: center;                    
+  justify-content: center;                
+  text-decoration: none;                 
+  opacity: 0;                              
+  pointer-events: none;                 
+  transition:                               
+    opacity 0.8s ease,                    
+    transform 0.8s ease;                   
+  z-index: 999;                            
 }
 
-/* Boton deslizante */
-.scroll-to-top {
-  position: fixed;
-  bottom: 5rem;
-  right: 1.25rem;
-  width: 3rem;
-  height: 3rem;
-  background-color: #000;
-  color: white;
-  font-size: 1.5rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  z-index: 999;
-}
 
 .scroll-to-top.show {
-  opacity: 1;
-  pointer-events: auto;
-  transform: scale(1);
+  opacity: 1;                               
+  pointer-events: auto;                    
+  transform: scale(1);                    
 }
+
 
 .scroll-to-top:hover {
-  background-color: #e45d1e;
+  background-color: #ed3e13;             
+}
+/* ===============================
+   Mini chat flotante (WhatsApp)
+================================ */
+.mini-chat {
+  position: fixed;                            
+  bottom: 6rem;                             
+  right: 1.25rem;                             
+  background-color: #25d366;                
+  color: white;                             
+  padding: 0.75rem 1rem;                     
+  border-radius: 12px;                      
+  font-size: 0.9rem;                          
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);    
+  z-index: 1000;                              
+  max-width: 230px;                        
+  width: auto;                               
+  line-height: 1.4;                           
+  white-space: normal;                     
+  pointer-events: auto;                     
+
+ 
+  opacity: 0;                                 
+  transform: translateY(20px);                
+  transition: opacity 0.6s ease, transform 0.6s ease; 
+  visibility: hidden;                         
 }
 
-/* Mobiles */
-
-@media screen and (max-width: 500px) {
-  .slider-text-overlay{
-color: #ffffff;
-}
-.navbar {
-  position: fixed;
-  top: 5rem;
-  right: 0; /* Cambiado de left: 0 a right: 0 */
-  height: auto; /* o 100% si la quieres de arriba abajo */
-  width: auto; /* auto para que se ajuste al contenido */
-  background-color: #000;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column; /* Para que los enlaces estén uno debajo del otro */
-  align-items: flex-end; /* Alinea a la derecha */
-  z-index: 1000;
-  transition: top 0.3s ease;
-}
-.navbar a {
-  color: white;
-  margin: 0.5rem 0;
-  text-decoration: none;
-  font-size: 0.8125rem;
+/* Triángulo inferior simulando la punta del globo de chat */
+.mini-chat::after {
+  content: "";                               
+  position: absolute;
+  bottom: -10px;                             
+  right: 20px;                                
+  width: 0;
+  height: 0;
+  border-width: 10px 10px 0 10px;          
+  border-style: solid;
+  border-color: #25d366 transparent transparent transparent; 
 }
 
-.navbar a:hover {
-  color: #e45d1e;
+/*Muestra el mini chat (con animación de entrada) */
+.mini-chat.show {
+  opacity: 1;                               
+  transform: translateY(0);                   
+  visibility: visible;                       
 }
-  .slider-button-float {
-    bottom: 3%;
-    padding: 0.375rem 0.625rem;
-    font-size: 0.875rem;
-    gap: 0.25rem;
+
+/* Animación de salida) */
+.mini-chat.hide {
+  opacity: 0;                              
+  transform: translateY(20px);              
+  visibility: hidden;                         
+}
+
+/* ========== */
+/* Responsivos*/
+/* ========== */
+
+/* ===============================
+   Altura del slider
+   Ajuste en pantallas grandes donde el slider puede verse excesivamente alto
+   (Ej. resoluciones como 1200×800, 1024×800, 2048×1536)
+================================ */
+@media screen and (max-width: 1536px) {
+  .slider {
+    height: clamp(390px, 57vh, 650px); /* Reduce la altura del slider en función del viewport */
+    /* clamp(min, ideal, max): asegura que la altura no sea ni demasiado baja ni demasiado alta */
   }
-.slider-button {
-  background-color: rgba(0, 0, 0, 0.603);
-  padding: 0.4rem;               /* antes: 0.625rem */
-  font-size: 1rem;               /* antes: 1.5rem */
-  border-radius: 0.25rem;        /* opcional, un poco más redondo */
-  color: white;
-  cursor: pointer;
-  margin: 0 0.75rem;             /* opcional: reducir separación horizontal */
-  transition: outline 0.3s ease, background-color 0.3s ease;
 }
+/* ===============================
+   Diseño responsivo para pantallas ≥ 908px 
+================================ */
+@media (min-width: 908px) {
+
+  /* Contenedor de flechas de navegación del slider */
+  .slider-controls {
+    top: 0;                                 
+    height: 100%;                           
+    pointer-events: none;                   
+    justify-content: space-between;        
+    padding: 0;                          
+  }
+
+  /* Botone del slider */
+  .slider-button {
+    height: 100%;                           
+    width: 3rem;                          
+    border-radius: 0;                      
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;                  
+    font-size: 1.5rem;                      
+    margin: 0;                              
+    
+    
+    background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.856),
+      transparent
+    );
+    transition: background 0.3s ease;
+  }
+
+  /* Botón derecho con degradado invertido (de derecha a izquierda) */
+  .slider-button:last-child {
+    background: linear-gradient(
+      to left,
+      rgba(0, 0, 0, 0.5),
+      transparent
+    );
+  }
+
+  /* Efecto hover para ambos botones */
+  .slider-button:hover {
+    background: rgba(0, 0, 0, 0.7);     
+  }
+}
+/* ===============================
+   Responsivo: Estilos para móviles (≤ 768px)
+================================ */
+@media screen and (max-width: 768px) {
+
+  /* Imagen del logo (versión PNG) */
+  .logo-img {
+    margin-top: 2rem;
+    width: 5.5rem; /* Se reduce el ancho en móviles */
+  }
+
+  /* Logo cuando se hace scroll en móviles */
+  .logo-img.scrolled {
+    width: 4.5rem;
+    margin-top: 0rem;
+  }
+
+  /* Texto decorativo PNG debajo del logo */
+  .logo-texto {
+    margin-top: -1.5rem;
+    margin-left: -2.9rem;
+    transform: scale(0.6); 
+    /* transform-origin: left; Opcional si quieres alinear el escalado */
+  }
+
+  /* Texto "Muebles" (junto al logo) */
+  .logo-muebles {
+    margin-left: -2.9rem;
+    margin-top: -1.099rem;
+    font-size: 1.5rem; 
+  }
+
+  /* ===============================
+     Slider
+  =============================== */
+
+  .slider {
+    height: clamp(250px, 56vh, 400px); /* Altura optimizada para pantallas pequeñas */
+  }
+
+  .slider-text-overlay {
+    color: #ffffff; /* Asegura buena visibilidad del texto sobre imagen */
+  }
+
+  /* ===============================
+     Menú móvil desplegable
+  =============================== */
+
+  .navbar {
+    position: fixed;
+    top: 5rem;
+    right: 0; /* Menú se despliega desde la derecha */
+    height: 3.6rem; /* Altura compacta (o usar 100% para pantalla completa) */
+    width: auto;
+    background-color: #000;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;     /* Enlaces en columna */
+    align-items: flex-end;      /* Alineación hacia la derecha */
+    z-index: 1000;
+    transition: top 0.3s ease;
+  }
+
+  .navbar a {
+    color: white;
+    margin: 0.5rem 0;
+    text-decoration: none;
+    font-size: 0.8125rem;
+  }
+
+  .navbar a:hover {
+    color: #ed3e13;
+  }
+
+  /* ===============================
+     Botón "Ver proyectos" flotante dentro del slider
+  =============================== */
+  .slider-button-float {
+    bottom: 3%;                          
+    padding: 0.375rem 0.625rem;         
+    font-size: 0.875rem;               
+    gap: 0.25rem;                        
+  }
+
+  /* ===============================
+     Flechas de navegación del slider
+  =============================== */
+  .slider-button {
+    background-color: rgba(0, 0, 0, 0.603);
+    padding: 0.4rem;               
+    font-size: 1rem;               
+    border-radius: 0.25rem;       
+    color: white;
+    cursor: pointer;
+    margin: 0 0.75rem;
+    transition: outline 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* ===============================
+     Footer
+  =============================== */
+  .footer {
+    font-size: 0.75rem;          
+    padding-bottom: 5rem;         
+  }
 
 }
-

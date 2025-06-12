@@ -1,584 +1,323 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <!-- Codificación de caracteres y adaptabilidad para diferentes dispositivos -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Título de la página -->
-    <title>
-      Proyectos de Cocinas y Muebles a Medida en Chile y Perú | STYLE
-    </title>
+<head>
 
-    <!-- Ícono del navegador -->
-    <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Meta descripción SEO -->
-    <meta
-      name="description"
-      content="Galería de cocinas y muebles a medida realizados por STYLE en Chile y Perú. Inspírate con nuestros proyectos personalizados en melamina de alta calidad."
-    />
 
-    <!-- Palabras clave SEO -->
-    <meta
-      name="keywords"
-      content="galería de muebles, proyectos de cocinas, muebles a medida, muebles modernos, melamina, diseño de interiores, muebles en Chile, muebles en Perú"
-    />
+  <title>
+    Proyectos de Cocinas y Muebles a Medida en Chile y Perú | STYLE
+  </title>
 
-    <!-- Autor de la página -->
-    <meta name="author" content="STYLE Muebles a Medida" />
+  <link rel="icon" href="imagenes/favicon.ico" type="image/x-icon" />
 
-    <!-- Open Graph -->
-    <meta
-      property="og:title"
-      content="Proyectos de Muebles a Medida | STYLE Chile y Perú"
-    />
-    <meta
-      property="og:description"
-      content="Explora nuestros proyectos de cocinas y muebles a medida en melamina realizados en Chile y Perú. Calidad, diseño y funcionalidad."
-    />
-    <meta
-      property="og:image"
-      content="https://stylemuebles.com/imagenes/og-image.jpg"
-    />
-    <meta property="og:url" content="https://stylemuebles.com" />
-    <meta property="og:type" content="website" />
+  <meta name="description"
+    content="Galería de cocinas y muebles a medida realizados por STYLE en Chile y Perú. Inspírate con nuestros proyectos personalizados en melamina de alta calidad." />
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Galería de Proyectos de Muebles a Medida | STYLE"
-    />
-    <meta
-      name="twitter:description"
-      content="Revisa nuestras cocinas y muebles personalizados realizados en todo Chile y Perú."
-    />
-    <meta
-      name="twitter:image"
-      content="https://stylemuebles.com/imagenes/og-image.jpg"
-    />
+  <meta name="keywords"
+    content="galería de muebles, proyectos de cocinas, muebles a medida, muebles modernos, melamina, diseño de interiores, muebles en Chile, muebles en Perú" />
 
-    <!-- Tipografía -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Autor de la página -->
+  <meta name="author" content="STYLE Muebles a Medida" />
 
-    <!-- Tailwind CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+  <meta property="og:title" content="Proyectos de Muebles a Medida | STYLE Chile y Perú" />
+  <meta property="og:description"
+    content="Explora nuestros proyectos de cocinas y muebles a medida en melamina realizados en Chile y Perú. Calidad, diseño y funcionalidad." />
+  <meta property="og:image" content="https://stylemuebles.com/imagenes/og-image.jpg" />
+  <meta property="og:url" content="https://stylemuebles.com" />
+  <meta property="og:type" content="website" />
 
-    <!-- CSS personalizado -->
-    <link href="css/proyectos.css" rel="stylesheet" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Galería de Proyectos de Muebles a Medida | STYLE" />
+  <meta name="twitter:description"
+    content="Revisa nuestras cocinas y muebles personalizados realizados en todo Chile y Perú." />
+  <meta name="twitter:image" content="https://stylemuebles.com/imagenes/og-image.jpg" />
 
-    <!-- Iconos de FontAwesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  </head>
 
-  <body>
-    <header>
-      <!-- Logo principal -->
-      <div class="logo">
-        <img
-          src="imagenes/logo-grande.jpg"
-          alt="Logo de STYLE, Muebles a Medida"
-          class="logo-img"
-          id="logo"
-        />
-      </div>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
-      <!-- Menú de navegación -->
-      <nav class="navbar" role="navigation" aria-label="Menú principal">
-        <ul class="flex space-x-4">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="proyectos.html">Proyectos</a></li>
-          <li><a href="pedidos.html">Pedidos</a></li>
-        </ul>
-      </nav>
-    </header>
-    <main class="pb-22">
-      <h1 class="visually-hidden">Galería de Proyectos | STYLE Muebles</h1>
 
-      <!-- Slider de imágenes principales -->
-      <div class="slider">
-        <div class="slider-container" id="slider-container">
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="imagenes/proyectos/slide/mobile/proyectobannerslide1.png"
-            />
-            <img
-              src="imagenes/proyectos/slide/bannerproyectos1.png"
-              alt="Proyecto de cocina moderna con acabados en madera"
-              loading="lazy"
-            />
-          </picture>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet" />
 
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="imagenes/proyectos/slide/mobile/proyectobannerslide2.png"
-            />
-            <img
-              src="imagenes/proyectos/slide/bannerproyectos2.png"
-              alt="Proyecto de cocina moderna con acabados en madera"
-              loading="lazy"
-            />
-          </picture>
 
-          <picture>
-            <source
-              media="(max-width: 768px)"
-              srcset="imagenes/proyectos/slide/mobile/proyectobannerslide3.png"
-            />
-            <img
-              src="imagenes/proyectos/slide/bannerproyectos3.png"
-              alt="Proyecto de cocina moderna con acabados en madera"
-              loading="lazy"
-            />
-          </picture>
-        </div>
-        <div class="slider-text-overlay">
-          <h2 class="slider-heading">Modernízate</h2>
-          <div class="slider-subtext">Instalación incluida</div>
-        </div>
-        <!-- Controles del slider -->
-        <div class="slider-controls">
-          <div
-            class="slider-button"
-            onclick="prevSlide()"
-            role="button"
-            aria-label="Anterior"
-            tabindex="0"
-          >
-            &#10094;
-          </div>
-          <div
-            class="slider-button"
-            onclick="nextSlide()"
-            role="button"
-            aria-label="Siguiente"
-            tabindex="0"
-          >
-            &#10095;
-          </div>
-        </div>
-      </div>
+  <link href="css/proyectos.css" rel="stylesheet" />
 
-      <!-- indicadores del slide -->
-      <div class="slider-indicators" id="slider-indicators"></div>
 
-      <!-- Encabezado SEO -->
-      <h2 class="text-center mt-8 text-2xl font-bold text-gray-800">
-        Proyectos de cocinas y muebles a medida en Chile y Perú
-      </h2>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
 
-      <!-- Frase de presentación -->
-      <div class="text-center mt-1">
-        <p>
-          Conoce algunos de nuestros trabajos realizados en melamina de alta
-          calidad.
-        </p>
-      </div>
-
-      <!-- Galería de imágenes de proyectos -->
-      <div class="mt-4 px-2 max-w-6xl mx-auto mb-10">
-        <h3 class="text-center text-lg font-semibold mb-6">
-          Galería de proyectos
-        </h3>
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
-        >
-          <!-- Imagen 1 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto1.webp')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto1.webp"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto1.webp"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 2 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto2.webp')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto2.webp"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto2.webp"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 3 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto3.webp')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto3.webp"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto3.webp"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 4 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 4.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 4.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 4.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 5 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 5.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 5.JPG"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 5.JPG"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 6 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 6.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 6.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 6.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 7 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 7.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 7.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 7.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 8 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 8.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 8.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 8.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 9 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 9.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 9.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 9.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 10 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 10.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 10.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 10.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 11 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 11.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 11.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 11.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 12 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 12.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 12.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 12.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 13 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 13.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 13.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 13.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 14 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 14.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 14.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 14.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 15 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 15.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 15.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 15.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!-- Imagen 16 -->
-          <div class="rounded-xl overflow-hidden shadow-lg">
-            <div
-              class="overflow-hidden cursor-pointer hidden lg:block"
-              onclick="mostrarModal('imagenes/proyectos/galeria/proyecto 16.jpg')"
-            >
-              <img
-                src="imagenes/proyectos/galeria/proyecto 16.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-            <!-- Imagen normal visible solo en pantallas pequeñas -->
-            <div class="lg:hidden">
-              <img
-                src="imagenes/proyectos/galeria/proyecto 16.jpg"
-                alt="Cocina moderna con gabinetes blancos y madera clara"
-                class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110"
-              />
-            </div>
-          </div>
-          <!--  -->
-        </div>
-      </div>
-    </main>
-
-    <!-- Botón flotante de WhatsApp -->
-    <a
-      href="https://wa.me/1234567890"
-      class="whatsapp-button"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Contactar vía WhatsApp"
-    >
-      <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Pie de página -->
-    <footer class="footer text-center py-4 bg-gray-100 text-gray-800">
-      <p>&copy; 2025 STYLE Muebles. Todos los derechos reservados.</p>
-    </footer>
-    <!-- boton deslizante -->
-    <a
-      href="#"
-      class="scroll-to-top"
-      id="scrollToTopBtn"
-      aria-label="Subir al inicio"
-    >
-      ↑
-    </a>
-    <!-- Modal de imagen -->
-    <div
-      id="modalImagen"
-      class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden"
-      onclick="cerrarModal()"
-    >
-      <span
-        class="absolute top-4 right-6 text-white text-3xl cursor-pointer"
-        onclick="cerrarModal(event)"
-        >&times;</span
-      >
-      <img
-        id="imagenModal"
-        src=""
-        class="max-w-4xl max-h-[80vh] rounded shadow-lg"
-      />
+<body>
+  <header>
+    <!-- Logo superior izquierdo -->
+    <div class="logo">
+      <img src="imagenes/logo-grande.png" alt="Logo de STYLE, Muebles a Medida" class="logo-img" id="logo" />
+      <img src="imagenes/logosuperior.png" alt="Logo con letras de STYLE Muebles a Medida"
+        class="h-10 w-auto sm:block logo-texto" />
+      <!-- class="h-10 w-auto hidden sm:block logo-texto" -- el hidden oculta en mobil -->
+      <span class="logo-muebles">Muebles</span>
     </div>
 
-    <!-- Script personalizado -->
-    <script src="js/proyectos.js"></script>
-  </body>
+    <!-- Menú de navegación principal -->
+
+    <nav class="navbar flex items-center justify-between relative px-4" role="navigation" aria-label="Menú principal">
+      <!-- Botón hamburguesa solo visible en móviles -->
+      <button id="menu-toggle" class="sm:hidden text-white p-2" aria-label="Abrir menú" aria-expanded="false">
+        ☰
+      </button>
+
+      <!-- Menú de navegación -->
+      <ul id="menu-list"
+        class="absolute top-full right-0 text-right w-full bg-black bg-opacity-80 text-white opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-4 px-4 py-3 sm:static sm:flex sm:opacity-100 sm:pointer-events-auto sm:translate-y-0 sm:space-x-6 sm:space-y-0 sm:bg-transparent sm:text-black sm:justify-end sm:items-center sm:px-0 sm:py-0">
+        <li>
+          <a href="index.html">Inicio</a>
+        </li>
+        <li><a href="quienessomos.html">Quiénes somos</a></li>
+        <li>
+          <a href="proyectos.html" class="font-bold text-yellow-500">Proyectos</a>
+        </li>
+        <li><a href="contactanos.html">Contáctanos</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="pb-22">
+    <h1 class="visually-hidden">Galería de Proyectos | STYLE Muebles</h1>
+
+    <!-- Slider de imágenes principales -->
+    <!-- seccion de antiuo slide  -->
+    <!--  -->
+    <!-- Botón flotante dentro del slider -->
+
+
+    <!--  -->
+    </div>
+
+    <!-- indicadores del slide -->
+    <div class="slider-indicators" id="slider-indicators"></div>
+
+    <!-- Encabezado SEO -->
+<h2 class="text-center mt-36 sm:mt-20 text-lg sm:text-2xl font-bold text-gray-800">
+  Proyectos de cocinas y muebles a medida en Chile y Perú
+</h2>
+<!-- Frase de presentación -->
+<div class="text-center mt-1">
+  <p class="text-base sm:text-lg">
+    Conoce algunos de nuestros trabajos realizados en melamina de alta
+    calidad.
+  </p>
+</div>
+
+    <!-- Galería de imágenes de proyectos -->
+    <div class="mt-1 px-2 max-w-6xl mx-auto mb-2">
+ <!-- <h3 class="text-center text-base sm:text-lg font-semibold mb-6 transition-opacity duration-1000 delay-300 opacity-100">
+  Proyectos de Muebles Modernos y Elegantes – Estilo y Diseño Exclusivo
+</h3> -->
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Imagen 1 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto1.webp" 
+            
+            alt="Mueble a medida moderno instalado en hogar en Chile"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 2 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto2.webp" 
+            
+            alt="Diseño personalizado de cocina modular en Santiago"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 3 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto3.webp"
+           
+            alt="Instalación de muebles para oficina moderna en Chile" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 4 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 4.jpg"
+           
+            alt="Proyecto de muebles personalizados para living en Chile" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 5 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 5.JPG" 
+          
+            alt="Muebles a medida para cocina equipada en Santiago"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 6 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 6.jpg" 
+            
+            alt="Diseño e instalación de closet moderno en Chile"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 7 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 7.jpg" 
+          
+            alt="Mobiliario de oficina a medida estilo contemporáneo"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 8 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 8.jpg"
+           
+            alt="Mueble personalizado para dormitorio moderno en Chile" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 9 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 9.jpg"
+           
+            alt="Cocina moderna con muebles hechos a medida en Santiago" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 10 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 10.jpg" 
+            
+            alt="Proyecto de muebles integrados en hogar chileno"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 11 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 11.jpg"
+            
+            alt="Estantería personalizada de madera instalada en Chile" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 12 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 12.jpg"
+            
+            alt="Mueble modular a medida para espacios reducidos en Santiago" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 13 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 13.jpg"
+           
+            alt="Muebles personalizados para espacios modernos en Chile" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 14 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 14.jpg" 
+  
+            alt="Closet empotrado a medida para habitación moderna"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 15 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 15.jpg" 
+            
+            alt="Mueble flotante instalado a medida en casa chilena"
+            loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+
+        <!-- Imagen 16 -->
+        <div class="rounded-xl overflow-hidden shadow-lg reveal">
+          <img src="imagenes/proyectos/galeria/proyecto 16.jpg"
+           
+            alt="Diseño de mobiliario para oficina en Santiago Chile" loading="lazy"
+            class="w-full h-64 lg:h-80 object-cover transform transition duration-500 hover:scale-110 cursor-pointer"
+            onclick="mostrarModal(this.src)" />
+        </div>
+      </div>
+
+
+      <!--  -->
+    </div>
+
+  </main>
+
+  <!-- Botón flotante de WhatsApp -->
+<a
+  href="https://wa.me/56951858928?text=Hola%2C%20estuve%20viendo%20los%20proyectos%20en%20su%20galer%C3%ADa%20y%20me%20gustar%C3%ADa%20cotizar%20un%20mueble%20personalizado.%20%C2%BFPodemos%20hablar%3F"
+  class="whatsapp-button"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contactar vía WhatsApp"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+
+  <!-- Pie de página -->
+  <footer class="footer text-center py-4 bg-gray-100 text-gray-800">
+    <p>&copy; 2025 STYLE Muebles. Todos los derechos reservados.</p>
+  </footer>
+  <!-- boton deslizante -->
+  <a href="#" class="scroll-to-top" id="scrollToTopBtn" aria-label="Subir al inicio">
+    ↑
+  </a>
+  <!-- Chat WhatsApp personalizado  -->
+  <div id="whatsapp-mini-chat" class="mini-chat hide">
+    <a id="whatsapp-chat-link" href="#" target="_blank" rel="noopener noreferrer">
+      👋 Cargando mensaje...
+    </a>
+  </div>
+
+  <!--  -->
+
+  <!-- Script personalizado -->
+  <script src="js/proyectos.js"></script>
+  <!-- Modal de imagen -->
+  <div id="lightbox-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden">
+    <button id="lightbox-prev" class="absolute left-4 text-white text-4xl font-bold cursor-pointer">
+      &#10094;
+    </button>
+    <img id="lightbox-image" src="" alt="Imagen ampliada" class="max-w-full max-h-full rounded-lg shadow-lg" />
+    <button id="lightbox-next" class="absolute right-4 text-white text-4xl font-bold cursor-pointer">
+      &#10095;
+    </button>
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl font-bold cursor-pointer">
+      &times;
+    </button>
+  </div>
+</body>
+
 </html>
