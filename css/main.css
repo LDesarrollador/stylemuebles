@@ -55,53 +55,53 @@ body {
    Logo flotante
 ================================ */
 .logo {
-  display: flex;               
-  align-items: center;         
-  gap: 0.5rem;                 
-  position: fixed;           
-  top: 1.25rem;                
-  left: 0;                   
-  z-index: 1001;              
-  transition: top 0.6s ease;  
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  z-index: 1001;
+  transition: top 0.6s ease;
+
 }
 
-/* Imagen del logo */
 .logo-img {
-  width: 7.5rem;
+  width: 7.3rem;
   height: auto;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
+
 }
 
 .logo-img.scrolled {
-  width: 5rem;                 
-  /* transform: scale(0.8); */ /* Alternativa opcional si se prefiere usar escala */
+  width: 5rem;
+  /* transform: scale(0.8); */
 }
 
-/* Texto en forma de imagen (PNG) */
+/* para el imagen de style texto */
 .logo-texto {
-  margin-top: -2.5rem;        
+  margin-top: -2.5rem; 
 }
-
 .logo-texto.oculto {
   display: none;
 }
 
-/* Texto "Muebles" */
+/* para el texto "Muebles"*/
 .logo-muebles {
   color: black;
   font-weight: 600;
-  margin-top: -1.5rem;         
+  margin-top: -1.5rem;
   font-size: 2rem;
-  user-select: none;          
-  opacity: 1;                  
-  /* transition: opacity 0.3s ease; */ /* Transición opcional si se desea suavizar el cambio */
+  user-select: none;
+  /* transition: opacity 0.3s ease; */
+  opacity: 1; 
 }
-
 
 .logo-muebles.scrolled {
-  opacity: 0;                  
-  pointer-events: none;        
+  opacity: 0;
+  pointer-events: none; /* para evitar que sea interactuable cuando está oculto */
 }
+
 
 /* ===============================
    Slider
@@ -370,14 +370,31 @@ body {
 /* ========== */
 
 /* ===============================
-   Altura del slider
-   Ajuste en pantallas grandes donde el slider puede verse excesivamente alto
-   (Ej. resoluciones como 1200×800, 1024×800, 2048×1536)
+   Ajuste en pantallas grandes 
+ 200×800, 1024×800, 2048×1536
 ================================ */
 @media screen and (max-width: 1536px) {
   .slider {
-    height: clamp(390px, 57vh, 650px); /* Reduce la altura del slider en función del viewport */
+    height: clamp(390px, 57vh, 650px); 
     /* clamp(min, ideal, max): asegura que la altura no sea ni demasiado baja ni demasiado alta */
+  }
+}
+@media screen and (max-width: 960px) {
+  .logo-img {
+    margin-top: 1.9rem;
+    width: 5.4rem;
+  }
+
+  .logo-texto {
+    margin-top: -1.2rem;
+    margin-left: -3.5rem;
+    transform: scale(0.5);
+  }
+
+  .logo-muebles {
+    margin-left: -3.4rem;
+    margin-top: -0.7rem;
+    font-size: 1rem;
   }
 }
 /* ===============================
@@ -434,39 +451,36 @@ body {
 ================================ */
 @media screen and (max-width: 768px) {
 
-  /* Imagen del logo (versión PNG) */
-  .logo-img {
-    margin-top: 2rem;
-    width: 5.5rem; /* Se reduce el ancho en móviles */
-  }
-
-  /* Logo cuando se hace scroll en móviles */
-  .logo-img.scrolled {
+.logo-img {
+    margin-top: 2.3rem;
     width: 4.5rem;
-    margin-top: 0rem;
   }
-
-  /* Texto decorativo PNG debajo del logo */
-  .logo-texto {
-    margin-top: -1.5rem;
-    margin-left: -2.9rem;
-    transform: scale(0.6); 
-    /* transform-origin: left; Opcional si quieres alinear el escalado */
+.logo-img.scrolled{
+  width: 4.5rem;
+  margin-top: 0rem;
+}
+/* Del Png Style */
+.logo-texto{
+  margin-top: -0.7rem;
+  margin-left: -3.5rem;
+  transform: scale(0.5);
+  /* transform-origin: left; */
+  
+}
+/* del texto "Muebles" */
+.logo-muebles {
+  /* color: rgb(255, 255, 255); */
+    margin-left: -3.4rem;
+    margin-top: -0.2rem;
+    font-size: 1rem
   }
-
-  /* Texto "Muebles" (junto al logo) */
-  .logo-muebles {
-    margin-left: -2.9rem;
-    margin-top: -1.099rem;
-    font-size: 1.5rem; 
-  }
-
   /* ===============================
      Slider
   =============================== */
 
   .slider {
-    height: clamp(250px, 56vh, 400px); /* Altura optimizada para pantallas pequeñas */
+    margin-top: 8rem;
+    height: clamp(250px, 56vh, 400px); 
   }
 
   .slider-text-overlay {
@@ -477,30 +491,34 @@ body {
      Menú móvil desplegable
   =============================== */
 
-  .navbar {
-    position: fixed;
-    top: 5rem;
-    right: 0; /* Menú se despliega desde la derecha */
-    height: 3.6rem; /* Altura compacta (o usar 100% para pantalla completa) */
-    width: auto;
-    background-color: #000;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;     /* Enlaces en columna */
-    align-items: flex-end;      /* Alineación hacia la derecha */
-    z-index: 1000;
-    transition: top 0.3s ease;
-  }
+/* menu */
+.navbar {
+  position: fixed;
+  top: 5rem;
+  right: 0; 
+  height: 3rem;
+  width: auto; 
+  background-color: #000;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-end; 
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+.navbar a {
+  color: white;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  font-size: 0.8125rem;
+}
 
-  .navbar a {
-    color: white;
-    margin: 0.5rem 0;
-    text-decoration: none;
-    font-size: 0.8125rem;
-  }
-
-  .navbar a:hover {
-    color: #ed3e13;
+.navbar a:hover {
+  color: #ed3e13;
+}
+  .footer {
+    font-size: 0.75rem; 
+    padding-bottom: 5rem; 
   }
 
   /* ===============================

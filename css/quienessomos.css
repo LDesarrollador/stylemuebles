@@ -15,6 +15,7 @@ body {
    Capa superpuesta semitransparente sobre el fondo
    =================================================== */
 body::before {
+  overflow-x: hidden;
   content: ''; 
   position: fixed;
   top: 0;
@@ -40,7 +41,7 @@ body::before {
   justify-content: flex-end;
   z-index: 1000;
   transition: top 0.3s ease;
-  height: 3.7rem;
+  height: 3.5rem;
 }
 
 .navbar a {
@@ -58,55 +59,54 @@ body::before {
   top: 0 !important;
 }
 /* ===============================
-   Logo flotante en esquina superior
-   =============================== */
+   Logo flotante
+================================ */
 .logo {
-  display: flex; 
-  align-items: center; 
+  display: flex;
+  align-items: center;
   gap: 0.5rem;
-  position: fixed; 
-  top: 1.25rem; 
-  left: 0; 
-  z-index: 1001; 
-  transition: top 0.6s ease; 
+  position: fixed;
+  top: 1.25rem;
+  left: 0;
+  z-index: 1001;
+  transition: top 0.6s ease;
+
 }
 
-/* Imagen del logo principal */
 .logo-img {
-  width: 7.5rem; 
-  height: auto; 
-  transition: all 0.3s ease; 
+  width: 7.3rem;
+  height: auto;
+  transition: all 0.3s ease;
+
 }
 
-/* Versión reducida del logo al hacer scroll (solo en escritorio) */
 .logo-img.scrolled {
-  width: 5rem; /* Se reduce el ancho */
-  /* transform: scale(0.8); */ /* Alternativa de escalado si se desea */
+  width: 5rem;
+  /* transform: scale(0.8); */
 }
 
+/* para el imagen de style texto */
 .logo-texto {
-  margin-top: -2.5rem; /* Desplaza hacia arriba para ajustar posición */
+  margin-top: -2.5rem; 
 }
-
-/* Oculta el texto del logo al hacer scroll */
 .logo-texto.oculto {
   display: none;
 }
 
-/* Texto adicional como "Muebles" junto al logo */
+/* para el texto "Muebles"*/
 .logo-muebles {
-  color: black; 
-  font-weight: 600; 
-  margin-top: -1.5rem; 
-  font-size: 2rem; 
-  user-select: none; 
+  color: black;
+  font-weight: 600;
+  margin-top: -1.5rem;
+  font-size: 2rem;
+  user-select: none;
+  /* transition: opacity 0.3s ease; */
   opacity: 1; 
-  /* transition: opacity 0.3s ease; */ /* Puedes activar si deseas animación */
 }
 
 .logo-muebles.scrolled {
-  opacity: 0; 
-  pointer-events: none;
+  opacity: 0;
+  pointer-events: none; /* para evitar que sea interactuable cuando está oculto */
 }
 
 /* ===============================
@@ -130,6 +130,7 @@ header {
   margin: 2rem auto; 
   max-width: 1200px; 
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); 
+  overflow-x: hidden;
 }
 
 /* ===============================
@@ -253,48 +254,62 @@ header {
 /* ========================= */
 /* Responsivos */
 /* ========================= */
-@media screen and (max-width: 768px) {
-
-  /* Ajuste del logo en imagen (ícono principal) */
+@media screen and (max-width: 960px) {
   .logo-img {
-    margin-top: 2rem;        
-    width: 5.5rem;           
+    margin-top: 1.9rem;
+    width: 5.4rem;
   }
 
-  /* Logo al hacer scroll en móvil */
-  .logo-img.scrolled {
-    width: 4.5rem;          
-    margin-top: 0rem;      
-  }
-
-  /* Ajustes para la imagen de texto "Style" */
   .logo-texto {
-    margin-top: -1.5rem;   
-    margin-left: -2.9rem;   
-    transform: scale(0.6); 
-    /* transform-origin: left; */ /*   permite que el escalado tenga origen a la izquierda */
+    margin-top: -1.2rem;
+    margin-left: -3.5rem;
+    transform: scale(0.5);
   }
 
-  /* Ajustes para el texto "Muebles" debajo del logo */
   .logo-muebles {
-    /* color: rgb(255, 255, 255); */ 
-    margin-left: -2.9rem;    
-    margin-top: -1.099rem;    
-    font-size: 1.5rem;     
+    margin-left: -3.4rem;
+    margin-top: -0.7rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+.logo-img {
+    margin-top: 2.3rem;
+    width: 4.5rem;
+  }
+.logo-img.scrolled{
+  width: 4.5rem;
+  margin-top: 0rem;
+}
+/* Del Png Style */
+.logo-texto{
+  margin-top: -0.7rem;
+  margin-left: -3.5rem;
+  transform: scale(0.5);
+  /* transform-origin: left; */
+  
+}
+/* del texto "Muebles" */
+.logo-muebles {
+  /* color: rgb(255, 255, 255); */
+    margin-left: -3.4rem;
+    margin-top: -0.2rem;
+    font-size: 1rem
   }
 
-/* Menu */
+/* menu */
 .navbar {
   position: fixed;
   top: 5rem;
-  right: 0;
-  height: 3.6rem; 
+  right: 0; 
+  height: 3rem;
   width: auto; 
   background-color: #000;
   padding: 1rem;
   display: flex;
   flex-direction: column; 
-  align-items: flex-end;
+  align-items: flex-end; 
   z-index: 1000;
   transition: top 0.3s ease;
 }
@@ -308,9 +323,8 @@ header {
 .navbar a:hover {
   color: #ed3e13;
 }
-/* footer */
-.footer {
-    font-size: 0.75rem;
+  .footer {
+    font-size: 0.75rem; 
     padding-bottom: 5rem; 
   }
-}
+} 

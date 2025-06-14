@@ -37,7 +37,7 @@ body {
   justify-content: flex-end;
   z-index: 1000;
   transition: top 0.3s ease;
-  height: 3.7rem;
+  height: 3.5rem;
 }
 
 .navbar a {
@@ -60,21 +60,29 @@ body {
 ================================ */
 .logo {
   display: flex;
-align-items: center;
-gap: 0.5rem;
+  align-items: center;
+  gap: 0.5rem;
   position: fixed;
   top: 1.25rem;
   left: 0;
   z-index: 1001;
-  transition: top 0.3s ease;
+  transition: top 0.6s ease;
+
 }
 
 .logo-img {
-  width: 7.5rem;
+  width: 7.3rem;
   height: auto;
   transition: all 0.3s ease;
+
 }
-/* para el png de style texto */
+
+.logo-img.scrolled {
+  width: 5rem;
+  /* transform: scale(0.8); */
+}
+
+/* para el imagen de style texto */
 .logo-texto {
   margin-top: -2.5rem; 
 }
@@ -89,13 +97,13 @@ gap: 0.5rem;
   margin-top: -1.5rem;
   font-size: 2rem;
   user-select: none;
-  transition: opacity 0.3s ease;
-  opacity: 1; /* valor por defecto */
+  /* transition: opacity 0.3s ease; */
+  opacity: 1; 
 }
 
 .logo-muebles.scrolled {
   opacity: 0;
-  pointer-events: none; 
+  pointer-events: none; /* para evitar que sea interactuable cuando está oculto */
 }
 
 /* ===============================
@@ -340,49 +348,70 @@ gap: 0.5rem;
   transform: translateY(20px);
   visibility: hidden;
 }
-/* Mobiles */
+/* Responsivos */
+@media screen and (max-width: 960px) {
+  .logo-img {
+    margin-top: 1.9rem;
+    width: 5.4rem;
+  }
+
+  .logo-texto {
+    margin-top: -1.2rem;
+    margin-left: -3.5rem;
+    transform: scale(0.5);
+  }
+
+  .logo-muebles {
+    margin-left: -3.4rem;
+    margin-top: -0.7rem;
+    font-size: 1rem;
+  }
+  .slider{
+    margin-top: 8rem;
+    height: 850px;
+  }
+}
 @media screen and (max-width: 800px) {
 .slider-text-overlay{
 color: #ffffff;
 }
 /* logos */
-
 .logo-img {
-    margin-top: 2rem;
-    width: 5.5rem;
+    margin-top: 2.3rem;
+    width: 4.5rem;
   }
 .logo-img.scrolled{
   width: 4.5rem;
   margin-top: 0rem;
 }
-/* Del img Style */
+/* Del Png Style */
 .logo-texto{
-  margin-top: -1.5rem;
-  margin-left: -2.9rem;
-  transform: scale(0.6);
+  margin-top: -0.7rem;
+  margin-left: -3.5rem;
+  transform: scale(0.5);
   /* transform-origin: left; */
   
 }
 /* del texto "Muebles" */
 .logo-muebles {
   /* color: rgb(255, 255, 255); */
-    margin-left: -2.9rem;
-    margin-top: -1.099rem;
-    font-size: 1.5rem
+    margin-left: -3.4rem;
+    margin-top: -0.2rem;
+    font-size: 1rem
   }
 
 /* menu */
 .navbar {
   position: fixed;
   top: 5rem;
-  right: 0;
-  height: 3.6rem; 
+  right: 0; 
+  height: 3rem;
   width: auto; 
   background-color: #000;
   padding: 1rem;
   display: flex;
   flex-direction: column; 
-  align-items: flex-end;
+  align-items: flex-end; 
   z-index: 1000;
   transition: top 0.3s ease;
 }
@@ -396,9 +425,8 @@ color: #ffffff;
 .navbar a:hover {
   color: #ed3e13;
 }
-/* footer */
-.footer {
+  .footer {
     font-size: 0.75rem; 
-    padding-bottom: 5rem;
+    padding-bottom: 5rem; 
   }
 }
